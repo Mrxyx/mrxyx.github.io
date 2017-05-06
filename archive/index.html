@@ -227,11 +227,11 @@ classes that you can use:
     <div class="tagslist">
         
             
-                <span><a href="/tags/webApp/" title="webApp">webApp<sup>1</sup></a></span>
+                <span><a href="/tags/欢迎/" title="欢迎">欢迎<sup>1</sup></a></span>
             
         
             
-                <span><a href="/tags/欢迎/" title="欢迎">欢迎<sup>1</sup></a></span>
+                <span><a href="/tags/webApp/" title="webApp">webApp<sup>1</sup></a></span>
             
         
     </div>
@@ -252,14 +252,21 @@ classes that you can use:
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
-	<script>
+<script>
 (function(){
     var bp = document.createElement('script');
-    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
+
 </footer>
         </div>
     </div>
