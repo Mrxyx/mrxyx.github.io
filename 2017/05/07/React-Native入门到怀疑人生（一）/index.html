@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      React Native入门到怀疑人生（一） | 知,行|Mrx 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Mrx">
+    
+    
+
+    <meta name="description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。从入门到怀疑人生，对！没错怀疑人生就是我现在的状态😇。文章不当之处，希望大家不吝赐教，多谢！">
+<meta name="keywords" content="React Native， webApp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React Native入门到怀疑人生（一） | 知,行|Mrx">
+<meta property="og:url" content="http://www.mrxyx.cn/2017/05/07/React-Native入门到怀疑人生（一）/index.html">
+<meta property="og:site_name" content="知,行|Mrx">
+<meta property="og:description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。从入门到怀疑人生，对！没错怀疑人生就是我现在的状态😇。文章不当之处，希望大家不吝赐教，多谢！">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050704.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050701.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050702.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050703.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050706.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050707.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050709.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050711.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050712.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050714.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050713.png">
+<meta property="og:updated_time" content="2017-05-07T15:00:05.350Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React Native入门到怀疑人生（一） | 知,行|Mrx">
+<meta name="twitter:description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。从入门到怀疑人生，对！没错怀疑人生就是我现在的状态😇。文章不当之处，希望大家不吝赐教，多谢！">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050704.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">知,行|Mrx</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          梦想星辰大海的人，注定孤独
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/Mrxyx" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">React Native入门到怀疑人生（一）</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-05-07" class="post-meta__date date">2017-05-07</time> 
+	 <span id="busuanzi_container_page_pv" class="post-meta__date date">|&nbsp;&nbsp;viewed <span id="busuanzi_value_page_pv"></span> 次</span>
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/Android/">Android</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/React-Native，-webApp/">React Native， webApp</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。从入门到怀疑人生，对！没错怀疑人生就是我现在的状态😇。文章不当之处，希望大家不吝赐教，多谢！<br><a id="more"></a></p>
+<h2 id="Windows版本React-Native环境配置"><a href="#Windows版本React-Native环境配置" class="headerlink" title="Windows版本React Native环境配置"></a>Windows版本React Native环境配置</h2><h3 id="1-安装JDk"><a href="#1-安装JDk" class="headerlink" title="1 安装JDk"></a>1 安装JDk</h3><p>下载<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="external">jdk1.8</a>以上版本，安装并配置相应环境变量.验证是否正确安装打开命令行，输入java -version验证.<br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050704.png" alt=""></p>
+<h3 id="2-安装Android-Studio"><a href="#2-安装Android-Studio" class="headerlink" title="2 安装Android Studio"></a>2 安装Android Studio</h3><p><a href="https://developer.android.com/studio/index.html" target="_blank" rel="external">android stuido</a>,若初次下载，可选择包含Android SDK的下载版本。</p>
+<h3 id="3-配置SDK环境变量"><a href="#3-配置SDK环境变量" class="headerlink" title="3 配置SDK环境变量"></a>3 配置SDK环境变量</h3><p>找到SDK的安装目录，设置sdk环境变量,并将其加入环境变量PATH中，例如（ANDROID_HOME=&gt; E:\Android\sdk）（PATH=&gt; %ANDROID_HOME%\tools;%ANDROID_HOME%\platform-tools）。<br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050701.png" alt=""></p>
+<p><center><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050702.png" alt=""></center></p>
+<h3 id="4-设置SDk"><a href="#4-设置SDk" class="headerlink" title="4 设置SDk"></a>4 设置SDk</h3><p>打开android在SDK Platforms窗口中，选择Show Package Details，然后</p>
+<ul>
+<li>在Android 6.0 (Marshmallow)中勾选Google APIs、Android SDK Platform 23、Intel x86 Atom System Image、Intel x86 Atom_64 System Image以及Google APIs Intel x86 Atom_64 System Image。</li>
+<li>在SDK Tools窗口中，选择Show Package Details，然后在Android SDK Build Tools中勾选Android SDK Build-Tools 23.0.1（必须是这个版本）。然后还要勾选最底部的Android Support Repository.</li>
+</ul>
+<h3 id="5-安装Git"><a href="#5-安装Git" class="headerlink" title="5 安装Git"></a>5 安装Git</h3><p><a href="https://git-for-windows.github.io/" target="_blank" rel="external">https://git-for-windows.github.io/</a>版本控制工具，下面步骤直接可以使用git下载相应配置文件</p>
+<h3 id="6-安装node"><a href="#6-安装node" class="headerlink" title="6 安装node"></a>6 安装node</h3><p>React Native运行是基于node.js,所以请下载<a href="https://nodejs.org/en/" target="_blank" rel="external">node</a>安装完成之后，验证是否正常安装，可打开命令行输入node -v验证<br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050703.png" alt=""></p>
+<h3 id="7-安装命令行工具react-native-cli"><a href="#7-安装命令行工具react-native-cli" class="headerlink" title="7 安装命令行工具react-native-cli"></a>7 安装命令行工具react-native-cli</h3><p>选择需要安装的目录，新建文件夹,进入文件夹点击右键，在弹出界面中点击Git Bash Hell打开Git命令行,输入git clone <a href="https://github.com/facebook/react-native.git，等待下载" target="_blank" rel="external">https://github.com/facebook/react-native.git，等待下载</a><br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050706.png" alt=""><br>安装成功后界面文件目录如图<br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050707.png" alt=""><br>输入npm install -g react-native-cli 安装命令行工具<br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050709.png" alt=""><br>进入刚刚目录下的react-native目录下的react-native-cli目录，输入npm install -g(可以使用Git Bush Hell命令行，也可以使用CMD)<br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050711.png" alt=""></p>
+<h3 id="8-创建第一个RN项目"><a href="#8-创建第一个RN项目" class="headerlink" title="8 创建第一个RN项目"></a>8 创建第一个RN项目</h3><p>选择需要安装的目录，输入react-native init FirstRNProject，等待一段时间，安装成功目录如下<br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050712.png" alt=""></p>
+<h3 id="9-运行RN项目需要的服务"><a href="#9-运行RN项目需要的服务" class="headerlink" title="9 运行RN项目需要的服务"></a>9 运行RN项目需要的服务</h3><p>在新创建的项目根目录下，输入react-native start（可使用Git,也可使用CMD）启动成功后，可以用浏览器访问<a href="http://localhost:8081/index.android.bundle?platform=android" target="_blank" rel="external"></a>，如果可以访问表示服务器端已经可以了.</p>
+<h3 id="10-运行项目"><a href="#10-运行项目" class="headerlink" title="10 运行项目"></a>10 运行项目</h3><p>前提：需要有设备连接在电脑或打开模拟器（<strong>使用genymotion的话，需要z在设置中修改SDK为android sdk</strong>）<br>重新打开命令行（Git或CMD）,定位到新创建的项目根目录下，输入react-native run-android<br>（<strong>如果报错请检查Andorid环境变量、Android SDK的设置是否按照本文上方的SDK设置，全部添加</strong>）<br>如果模拟器或真机出现红色报错界面，可进入Dev开发者选项（Ctrl+M或者菜单键，在弹出框中选择Dev Seting,下图中位置，在对话框中输入本地IP+服务端口号，例如：192.168.1.66：8081，ip为我本机的Ip 端口可查看react-native start命令窗口的端口号，默认为8081）<br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050714.png" alt=""><br>至此，RN的环境配置及创建运行第一个项目已全部完成。<br>成功运行的界面如下<br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050713.png" alt=""></p>
+<blockquote>
+<p>感觉没有写什么东西🤸🤸🤸</p>
+</blockquote>
+<h2 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h2><p>好吧 如果上述步骤需要翻墙的话，推荐使用<strong><a href="https://github.com/getlantern/lantern" target="_blank" rel="external">latern</a></strong>,或者修改Host<strong><a href="https://laod.cn/hosts/2017-google-hosts.html" target="_blank" rel="external">老刀Host</a></strong></p>
+<p>有疑问欢迎留言。</p>
+
+  </section>
+
+  
+  
+  
+<section class="post-comments">
+<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: document.location.href, 
+    sourceId: "",
+    productKey: "33bdbc28951e4ef7a555f39a875c878a",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+</section>
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a> | 本站总点击<span id="busuanzi_value_site_pv"></span>次 | 您是第<span id="busuanzi_value_site_uv"></span>位访客</span>
+   
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?99d62de6b248a2fbdf4b9deb88ec07dc";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
