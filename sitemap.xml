@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.mrxyx.cn/about/index.html</loc>
+    
+    <lastmod>2017-05-07T09:35:38.242Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.mrxyx.cn/2017/05/06/%E7%A7%BB%E5%8A%A8web%E7%9B%B8%E5%85%B3%E6%8A%80%E6%9C%AF%E6%B5%85%E6%9E%90/</loc>
     
     <lastmod>2017-05-07T03:02:41.120Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://www.mrxyx.cn/2017/04/24/hello-world/</loc>
     
     <lastmod>2017-05-06T08:59:40.754Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.mrxyx.cn/about/index.html</loc>
-    
-    <lastmod>2017-05-01T17:24:12.258Z</lastmod>
     
   </url>
   
