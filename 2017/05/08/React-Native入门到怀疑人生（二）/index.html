@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      React Native入门到怀疑人生（二） | 知,行|Mrx 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Mrx">
+    
+    
+
+    <meta name="description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章React Native入门到怀疑人生（一）我们已经成功将RN配置环境搭建完成，本章节将讲解如何下载并运行FB提供的官方Demo，React.js学习，ES6语法相关学习，以及开发RN的编辑器推荐。请各位系好安全带，本章节过后我们将真正开始RN的开发。嘀！老年卡。">
+<meta name="keywords" content="React Native,webApp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React Native入门到怀疑人生（二） | 知,行|Mrx">
+<meta property="og:url" content="http://www.mrxyx.cn/2017/05/08/React-Native入门到怀疑人生（二）/index.html">
+<meta property="og:site_name" content="知,行|Mrx">
+<meta property="og:description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章React Native入门到怀疑人生（一）我们已经成功将RN配置环境搭建完成，本章节将讲解如何下载并运行FB提供的官方Demo，React.js学习，ES6语法相关学习，以及开发RN的编辑器推荐。请各位系好安全带，本章节过后我们将真正开始RN的开发。嘀！老年卡。">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050801.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050802.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050803.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050804.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050805.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050806.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050807.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050808.png">
+<meta property="og:updated_time" content="2017-05-08T15:01:35.001Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React Native入门到怀疑人生（二） | 知,行|Mrx">
+<meta name="twitter:description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章React Native入门到怀疑人生（一）我们已经成功将RN配置环境搭建完成，本章节将讲解如何下载并运行FB提供的官方Demo，React.js学习，ES6语法相关学习，以及开发RN的编辑器推荐。请各位系好安全带，本章节过后我们将真正开始RN的开发。嘀！老年卡。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050801.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">知,行|Mrx</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          梦想星辰大海的人，注定孤独
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/Mrxyx" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">React Native入门到怀疑人生（二）</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-05-08" class="post-meta__date date">2017-05-08</time> 
+	 <span id="busuanzi_container_page_pv" class="post-meta__date date">|&nbsp;&nbsp;viewed <span id="busuanzi_value_page_pv"></span> 次</span>
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/Android/">Android</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/React-Native/">React Native</a>, <a class="tags-link" href="/tags/webApp/">webApp</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章<a href="/2017/05/07/React-Native入门到怀疑人生（一）/" title="React Native入门到怀疑人生（一）">React Native入门到怀疑人生（一）</a>我们已经成功将RN配置环境搭建完成，本章节将讲解如何下载并运行FB提供的官方Demo，React.js学习，ES6语法相关学习，以及开发RN的编辑器推荐。请各位系好安全带，本章节过后我们将真正开始RN的开发。嘀！老年卡。<br><a id="more"></a></p>
+<h2 id="官方Demo的下载和运行"><a href="#官方Demo的下载和运行" class="headerlink" title="官方Demo的下载和运行"></a>官方Demo的下载和运行</h2><h3 id="1-下载RN源码"><a href="#1-下载RN源码" class="headerlink" title="1 下载RN源码"></a>1 下载RN源码</h3><p>选择需要安装的目录，新建文件夹，进入文件夹，点击右键在弹出界面中点击Git Bash Hell打开Git命令行，输入git clone <a href="https://github.com/facebook/react-native.git，等待下载。" target="_blank" rel="external">https://github.com/facebook/react-native.git，等待下载。</a><br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050801.png" alt="">,<br>安装完成后，界面目录如图。<br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050802.png" alt="">.<br>接着，在命令行中输入cd react-native &amp;&amp; npm install。等待安装项目依赖。</p>
+<h3 id="2-运行Android-Example"><a href="#2-运行Android-Example" class="headerlink" title="2 运行Android Example"></a>2 运行Android Example</h3><p><strong>Note that you’ll need the Android NDK installed, see <a href="https://github.com/facebook/react-native/blob/master/ReactAndroid/README.md#prerequisites" target="_blank" rel="external">prerequisites</a>.</strong><br>如上所述，在运行Android项目之前，你需要安装Android NDK,并且配置NDK环境变量。</p>
+<blockquote>
+<p>Make sure you have the following installed:</p>
+<ul>
+<li>Android SDK version 23 (compileSdkVersion in build.gradle)</li>
+<li>SDK build tools version 23.0.1 (buildToolsVersion in build.gradle)</li>
+<li>Android Support Repository &gt;= 17 (for Android Support Library)</li>
+<li>Android NDK (download links and installation instructions below)</li>
+</ul>
+</blockquote>
+<p>其实上述我们需要关注的只是Android NDK，RNDemo依赖的版本为<a href="https://developer.android.google.cn/ndk/downloads/older_releases.html#ndk-10c-downloads" target="_blank" rel="external">Android NDK, Revision 10e (May 2015)</a>.点击下载相应的NDK版本。（不需要翻墙~.~!）.<br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050803.png" alt="">配图只是想表达下我的网速😁</p>
+<p>下载完成之后，选择需要解压的目录，我这边放在sdk目录下如图，当前你可以随意<br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050804.png" alt=""><br>解压之后，记得要将NDK添加到环境变量中,如：（ANDROID_NDK =&gt; D:\sdk\android-ndk-r10e; Path =&gt; %ADNROID_NDK%）<br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050805.png" alt=""></p>
+<blockquote>
+<p>修改环境变量后，请重新打开命令行，才能生效</p>
+</blockquote>
+<p>至此配置基本完成，下面打开你的饭碗。。。你，就是说你的，是让你打开你的android模拟器（或者真机），你拿个吃饭的碗干嘛！<br>在项目根目录（E:\RNDemo\react-native）打开git，输入./gradlew :Examples:UIExplorer:android:app:installDebug，等待安装。（需要翻下墙，翻墙姿势请参考上一章<a href="/2017/05/07/React-Native入门到怀疑人生（一）/" title="React Native入门到怀疑人生（一）">React Native入门到怀疑人生（一）</a>）安装完成后你会发现在手机上UIExplore App已成功安装如图。<br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050806.png" alt=""><br>但是这个时候如果点击app打开会报错如图<br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050807.png" alt=""><br>这个时候我们需要输入./packager/packager.sh，启动packger server,然后在真机或模拟器上打开我们的应用。成功启动界面如图<br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050808.png" alt=""><br>Demo中展示有RN的基本组件可以点击浏览。可以点击查看，当然可以在源码中找到相应的控件学习下，这就是接下来的系列教程将会讲解的相关控件。</p>
+<h2 id="RN编辑器推荐"><a href="#RN编辑器推荐" class="headerlink" title="RN编辑器推荐"></a>RN编辑器推荐</h2><blockquote>
+<p>Nuclide是Facebook内部所使用的React Native开发工具。它最大的特点是自带调试功能，并且非常好地支持flow语法规则。（译注：然而我们还是推荐webstorm或是sublime text）。</p>
+<p>Ignite是一套整合了Redux以及一些常见UI组件的脚手架。它带有一个命令行可以生成app、组件或是容器。如果你喜欢它的选择搭配，那么不妨一试。</p>
+<p>CodePush是由微软提供的热更新服务。热更新可以使你绕过AppStore的审核机制，直接修改已经上架的应用。对于国内用户，我们也推荐由本网站提供的Pushy热更新服务，相比CodePush来说，提供了全中文的文档和技术支持，服务器部署在国内速度更快，还提供了全自动的差量更新方式，大幅节约更新流量，欢迎朋友们试用和反馈意见！</p>
+<p>Exponent是一套开发环境，还带有一个已上架的空应用容器。这样你可以在没有原生开发平台（Xcode或是Android Studio）的情况下直接编写React Native应用（当然这样你只能写js部分代码而没法写原生代码）。</p>
+<p>Deco是一个专为React Native设计的集成开发环境。它可以自动创建新项目、搜索开源组件并插入到项目中。你还可以实时地可视化地调整应用的界面。不过目前还只支持mac。</p>
+</blockquote>
+<p>由于win10系统所以这里选择的开发工具为webstorm。</p>
+<blockquote>
+<p>webstorm开发工具编辑RN代码提示功能可按照下列步骤</p>
+<ul>
+<li>1 进入你想存储这个文件的目录，按住shift+鼠标右键，选择“在此处打开命令窗口”</li>
+<li>2 在命令窗口中输入  git clone <a href="https://github.com/virtoolswebplayer/ReactNative-LiveTemplate" target="_blank" rel="external">https://github.com/virtoolswebplayer/ReactNative-LiveTemplate</a></li>
+<li>3 打开webstorm， 选择file–&gt;Import Settings…–&gt;在刚刚下载的文件夹里找到ReactNative.jar选择它–&gt;OK</li>
+<li>4 提示重启webstrom，重启，搞定</li>
+</ul>
+<p>RN使用ES6语法，所以我们可以开启webstorm对ES6语法的支持，步骤如下</p>
+<ul>
+<li>1 我们一定要下载最新版本的11.0.3 webstorm，只有这个版本才能更好的兼容ES6特性。</li>
+<li>2 设置JavaScript语言版本：</li>
+<li>Preferences &gt; Languages &amp; Frameworks &gt; JavaScript</li>
+</ul>
+</blockquote>
+<h2 id="Rect-js学习"><a href="#Rect-js学习" class="headerlink" title="Rect.js学习"></a>Rect.js学习</h2><p>推荐<a href="http://www.ruanyifeng.com/blog/2015/03/react.html" target="_blank" rel="external">阮一峰</a>老师的react.js快速入门教程。Rect.js不再展开讲解，后面课程会穿插讲解部分</p>
+<h2 id="ES6语法"><a href="#ES6语法" class="headerlink" title="ES6语法"></a>ES6语法</h2><p>同样的，推荐<a href="http://www.ruanyifeng.com/blog/2015/03/react.html" target="_blank" rel="external">阮一峰</a>老师的ES6教程。ES6不再展开讲解，后面课程会穿插讲解部分</p>
+<h2 id="其他资料"><a href="#其他资料" class="headerlink" title="其他资料"></a>其他资料</h2><ul>
+<li>[If you have a good comm</li>
+<li>and of English,Then you can look at other people carefully sorted out the list of resources](<a href="https://github.com/jondot/awesome-react-native" target="_blank" rel="external">https://github.com/jondot/awesome-react-native</a>)</li>
+<li><a href="https://github.com/reactnativecn/react-native-guide" target="_blank" rel="external">当然还有中文的参考资料</a></li>
+</ul>
+<p>感谢github👍，顺便给大家看一场<a href="https://github.com/shadowsocks/shadowsocks/issues/833" target="_blank" rel="external">撕逼大战</a>😎</p>
+<p>参考资料</p>
+<ul>
+<li><a href="https://github.com/facebook/react-native" target="_blank" rel="external">FaceBook.github</a></li>
+<li><a href="http://reactnative.cn/" target="_blank" rel="external">ReactNative 中文网</a></li>
+</ul>
+
+  </section>
+
+  
+  
+  
+<section class="post-comments">
+<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: document.location.href, 
+    sourceId: "",
+    productKey: "33bdbc28951e4ef7a555f39a875c878a",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+</section>
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a> | 本站总点击<span id="busuanzi_value_site_pv"></span>次 | 您是第<span id="busuanzi_value_site_uv"></span>位访客</span>
+   
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?99d62de6b248a2fbdf4b9deb88ec07dc";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
