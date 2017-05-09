@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050806.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050807.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050808.png">
-<meta property="og:updated_time" content="2017-05-09T13:14:10.136Z">
+<meta property="og:updated_time" content="2017-05-09T13:45:47.975Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Native入门到怀疑人生（二） | 知,行|Mrx">
 <meta name="twitter:description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章React Native入门到怀疑人生（一）我们已经成功将RN配置环境搭建完成，本章节将讲解如何下载并运行FB提供的官方Demo，React.js学习，ES6语法相关学习，以及开发RN的编辑器推荐。请各位系好安全带，本章节过后我们将真正开始RN的开发。嘀！老年卡。文章不当之处，希望大">
@@ -236,8 +236,13 @@ classes that you can use:
   <section id="post-content" class="article-content post">
     <p>欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章<a href="/2017/05/07/React-Native入门到怀疑人生（一）/" title="React Native入门到怀疑人生（一）">React Native入门到怀疑人生（一）</a>我们已经成功将RN配置环境搭建完成，本章节将讲解如何下载并运行FB提供的官方Demo，React.js学习，ES6语法相关学习，以及开发RN的编辑器推荐。请各位系好安全带，本章节过后我们将真正开始RN的开发。嘀！老年卡。文章不当之处，希望大家不吝赐教，多谢！<br><a id="more"></a></p>
 <h2 id="官方Demo的下载和运行"><a href="#官方Demo的下载和运行" class="headerlink" title="官方Demo的下载和运行"></a>官方Demo的下载和运行</h2><h3 id="1-下载RN源码"><a href="#1-下载RN源码" class="headerlink" title="1 下载RN源码"></a>1 下载RN源码</h3><p><strong>若已经安装过项目源码（只要你配置过RN环境基本上都已经克隆过源码，这里只是演示克隆步骤）可跳过此步骤，直接进入项目根目录输入<code>npm install</code>在当前文件夹安装项目依赖，然后跳过此步骤</strong></p>
-<p>选择需要安装的目录，新建文件夹，进入文件夹，点击右键在弹出界面中点击Git Bash Hell打开Git命令行，输入<code>git clone https://github.com/facebook/react-native.git</code>，等待下载。<br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050801.png" alt="">,<br>安装完成后，界面目录如图。<br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050802.png" alt="">.<br>接着，在命令行中输入<code>cd react-native &amp;&amp; npm install</code>。等待安装项目依赖。</p>
-<h3 id="2-运行Android-Example"><a href="#2-运行Android-Example" class="headerlink" title="2 运行Android Example"></a>2 运行Android Example</h3><p><strong>Note that you’ll need the Android NDK installed, see <a href="https://github.com/facebook/react-native/blob/master/ReactAndroid/README.md#prerequisites" target="_blank" rel="external">prerequisites</a>.</strong><br>如上所述，在运行Android项目之前，你需要安装Android NDK,并且配置NDK环境变量。</p>
+<p>选择需要安装的目录，新建文件夹，进入文件夹，点击右键在弹出界面中点击Git Bash Hell打开Git命令行，输入<code>git clone https://github.com/facebook/react-native.git</code>，等待下载。</p>
+<p><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050801.png" alt="">,</p>
+<p>安装完成后，界面目录如图。</p>
+<p><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050802.png" alt="">.</p>
+<p>接着，在命令行中输入<code>cd react-native &amp;&amp; npm install</code>。等待安装项目依赖。</p>
+<h3 id="2-运行Android-Example"><a href="#2-运行Android-Example" class="headerlink" title="2 运行Android Example"></a>2 运行Android Example</h3><p><strong>Note that you’ll need the Android NDK installed, see <a href="https://github.com/facebook/react-native/blob/master/ReactAndroid/README.md#prerequisites" target="_blank" rel="external">prerequisites</a>.</strong></p>
+<p>如上所述，在运行Android项目之前，你需要安装Android NDK,并且配置NDK环境变量。</p>
 <blockquote>
 <p>Make sure you have the following installed:</p>
 <ul>
@@ -247,12 +252,23 @@ classes that you can use:
 <li>Android NDK (download links and installation instructions below)</li>
 </ul>
 </blockquote>
-<p>其实上述我们需要关注的只是Android NDK，RNDemo依赖的版本为<a href="https://developer.android.google.cn/ndk/downloads/older_releases.html#ndk-10c-downloads" target="_blank" rel="external">Android NDK, Revision 10e (May 2015)</a>.点击下载相应的NDK版本。（不需要翻墙~.~!）.<br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050803.png" alt="">配图只是想表达下我的网速😁</p>
-<p>下载完成之后，选择需要解压的目录，我这边放在sdk目录下如图，当前你可以随意<br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050804.png" alt=""><br>解压之后，记得要将NDK添加到环境变量中,如：（ANDROID_NDK =&gt; D:\sdk\android-ndk-r10e; Path =&gt; %ADNROID_NDK%）<br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050805.png" alt=""></p>
+<p>其实上述我们需要关注的只是Android NDK，RNDemo依赖的版本为<a href="https://developer.android.google.cn/ndk/downloads/older_releases.html#ndk-10c-downloads" target="_blank" rel="external">Android NDK, Revision 10e (May 2015)</a>.点击下载相应的NDK版本。（不需要翻墙~.~!）.</p>
+<p><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050803.png" alt="">配图只是想表达下我的网速😁</p>
+<p>下载完成之后，选择需要解压的目录，我这边放在sdk目录下如图，当前你可以随意</p>
+<p><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050804.png" alt=""></p>
+<p>解压之后，记得要将NDK添加到环境变量中,如：（ANDROID_NDK =&gt; D:\sdk\android-ndk-r10e; Path =&gt; %ADNROID_NDK%）</p>
+<p><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050805.png" alt=""></p>
 <blockquote>
 <p>修改环境变量后，请重新打开命令行，才能生效</p>
 </blockquote>
-<p>至此配置基本完成，下面打开你的饭碗。。。你，就是说你的，是让你打开你的android模拟器（或者真机），你拿个吃饭的碗干嘛！<br>在项目根目录（E:\RNDemo\react-native）打开git，输入<code>./gradlew :Examples:UIExplorer:android:app:installDebug</code>，等待安装。（需要翻下墙，翻墙姿势请参考上一章<a href="/2017/05/07/React-Native入门到怀疑人生（一）/" title="React Native入门到怀疑人生（一）">React Native入门到怀疑人生（一）</a>）安装完成后你会发现在手机上UIExplore App已成功安装如图。<br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050806.png" alt=""><br>但是这个时候如果点击app打开会报错如图<br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050807.png" alt=""><br>这个时候我们需要输入<code>./packager/packager.sh</code>，启动packger server,然后在真机或模拟器上打开我们的应用。成功启动界面如图<br><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050808.png" alt=""><br>Demo中展示有RN的基本组件可以点击浏览。可以点击查看，当然可以在源码中找到相应的控件学习下，这就是接下来的系列教程将会讲解的相关控件。</p>
+<p>至此配置基本完成，下面打开你的饭碗。。。你，就是说你的，是让你打开你的android模拟器（或者真机），你拿个吃饭的碗干嘛！</p>
+<p>在项目根目录（E:\RNDemo\react-native）打开git，输入<code>./gradlew :Examples:UIExplorer:android:app:installDebug</code>，等待安装。（需要翻下墙，翻墙姿势请参考上一章<a href="/2017/05/07/React-Native入门到怀疑人生（一）/" title="React Native入门到怀疑人生（一）">React Native入门到怀疑人生（一）</a>）安装完成后你会发现在手机上UIExplore App已成功安装如图。</p>
+<p><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050806.png" alt=""></p>
+<p>但是这个时候如果点击app打开会报错如图</p>
+<p><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050807.png" alt=""></p>
+<p>这个时候我们需要输入<code>./packager/packager.sh</code>，启动packger server,然后在真机或模拟器上打开我们的应用。成功启动界面如图</p>
+<p><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050808.png" alt=""></p>
+<p>Demo中展示有RN的基本组件可以点击浏览。可以点击查看，当然可以在源码中找到相应的控件学习下，这就是接下来的系列教程将会讲解的相关控件。</p>
 <h2 id="RN编辑器推荐"><a href="#RN编辑器推荐" class="headerlink" title="RN编辑器推荐"></a>RN编辑器推荐</h2><blockquote>
 <p>Nuclide是Facebook内部所使用的React Native开发工具。它最大的特点是自带调试功能，并且非常好地支持flow语法规则。（译注：然而我们还是推荐webstorm或是sublime text）。</p>
 <p>Ignite是一套整合了Redux以及一些常见UI组件的脚手架。它带有一个命令行可以生成app、组件或是容器。如果你喜欢它的选择搭配，那么不妨一试。</p>
@@ -265,22 +281,32 @@ classes that you can use:
 <p>webstorm开发工具编辑RN代码提示功能可按照下列步骤</p>
 <ul>
 <li>1 进入你想存储这个文件的目录，按住shift+鼠标右键，选择“在此处打开命令窗口”</li>
-<li>2 在命令窗口中输入  <code>git clone https://github.com/virtoolswebplayer/ReactNative-LiveTemplate</code></li>
-<li>3 打开webstorm， 选择file–&gt;Import Settings…–&gt;在刚刚下载的文件夹里找到ReactNative.jar选择它–&gt;OK</li>
-<li>4 提示重启webstrom，重启，搞定</li>
-</ul>
-<p>RN使用ES6语法，所以我们可以开启webstorm对ES6语法的支持，步骤如下</p>
-<ul>
-<li>1 我们一定要下载最新版本的11.0.3 webstorm，只有这个版本才能更好的兼容ES6特性。</li>
-<li>2 设置JavaScript语言版本：Preferences &gt; Languages &amp; Frameworks &gt; JavaScript</li>
 </ul>
 </blockquote>
+<ul>
+<li><p>2 在命令窗口中输入  <code>git clone https://github.com/virtoolswebplayer/ReactNative-LiveTemplate</code></p>
+</li>
+<li><p>3 打开webstorm， 选择file–&gt;Import Settings…–&gt;在刚刚下载的文件夹里找到ReactNative.jar选择它–&gt;OK</p>
+</li>
+<li><p>4 提示重启webstrom，重启，搞定</p>
+</li>
+</ul>
+<blockquote>
+<p>RN使用ES6语法，所以我们可以开启webstorm对ES6语法的支持，步骤如下</p>
+</blockquote>
+<ul>
+<li><p>1 我们一定要下载最新版本的11.0.3 webstorm，只有这个版本才能更好的兼容ES6特性。</p>
+</li>
+<li><p>2 设置JavaScript语言版本：Preferences &gt; Languages &amp; Frameworks &gt; JavaScript</p>
+</li>
+</ul>
 <h2 id="Rect-js学习"><a href="#Rect-js学习" class="headerlink" title="Rect.js学习"></a>Rect.js学习</h2><p>推荐<a href="http://www.ruanyifeng.com/blog/2015/03/react.html" target="_blank" rel="external">阮一峰</a>老师的react.js快速入门教程。Rect.js不再展开讲解，后面课程会穿插讲解部分</p>
 <h2 id="ES6语法"><a href="#ES6语法" class="headerlink" title="ES6语法"></a>ES6语法</h2><p>同样的，推荐<a href="http://www.ruanyifeng.com/blog/2015/03/react.html" target="_blank" rel="external">阮一峰</a>老师的ES6教程。ES6不再展开讲解，后面课程会穿插讲解部分</p>
 <h2 id="其他资料"><a href="#其他资料" class="headerlink" title="其他资料"></a>其他资料</h2><ul>
-<li>[If you have a good comm</li>
-<li>and of English,Then you can look at other people carefully sorted out the list of resources](<a href="https://github.com/jondot/awesome-react-native" target="_blank" rel="external">https://github.com/jondot/awesome-react-native</a>)</li>
-<li><a href="https://github.com/reactnativecn/react-native-guide" target="_blank" rel="external">当然还有中文的参考资料</a></li>
+<li><p><a href="https://github.com/jondot/awesome-react-native" target="_blank" rel="external">If you have a good command of English,Then you can look at other people carefully sorted out the list of resources</a></p>
+</li>
+<li><p><a href="https://github.com/reactnativecn/react-native-guide" target="_blank" rel="external">当然还有中文的参考资料</a></p>
+</li>
 </ul>
 <p>感谢github👍，顺便给大家看一场<a href="https://github.com/shadowsocks/shadowsocks/issues/833" target="_blank" rel="external">撕逼大战</a>😎</p>
 <p>##参考资料</p>
