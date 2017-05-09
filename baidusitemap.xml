@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://www.mrxyx.cn/2017/05/08/React-Native%E5%85%A5%E9%97%A8%E5%88%B0%E6%80%80%E7%96%91%E4%BA%BA%E7%94%9F%EF%BC%88%E4%BA%8C%EF%BC%89/</loc>
-    <lastmod>2017-05-08T15:41:14.272Z</lastmod>
+    <lastmod>2017-05-09T13:11:59.937Z</lastmod>
     <data>
         <display>
         <title>React Native入门到怀疑人生（二）</title>
@@ -14,6 +14,50 @@
         <tag>React Native</tag>
          
         <tag>webApp</tag>
+         
+         
+           
+             
+              <breadCrumb title="React Native" url="http://www.mrxyx.cn/categories/React-Native/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.mrxyx.cn/2017/05/09/React-Native%E5%85%A5%E9%97%A8%E5%88%B0%E6%80%80%E7%96%91%E4%BA%BA%E7%94%9F%EF%BC%88%E4%B8%89%EF%BC%89/</loc>
+    <lastmod>2017-05-09T13:02:52.557Z</lastmod>
+    <data>
+        <display>
+        <title>React Native入门到怀疑人生（三）</title>
+        <pubTime>2017-05-09T10:47:34.000Z</pubTime>
+        
+        <tag>React Native</tag>
+         
+        <tag>webApp</tag>
+         
+         
+           
+             
+              <breadCrumb title="React Native" url="http://www.mrxyx.cn/categories/React-Native/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.mrxyx.cn/2017/05/09/Android%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/</loc>
+    <lastmod>2017-05-09T12:56:18.850Z</lastmod>
+    <data>
+        <display>
+        <title>Android内存优化</title>
+        <pubTime>2017-05-09T10:46:12.000Z</pubTime>
+        
+        <tag>内存</tag>
+         
+        <tag>优化</tag>
          
          
            
@@ -27,7 +71,7 @@
     
   <url>
     <loc>http://www.mrxyx.cn/2017/05/07/React-Native%E5%85%A5%E9%97%A8%E5%88%B0%E6%80%80%E7%96%91%E4%BA%BA%E7%94%9F%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
-    <lastmod>2017-05-08T15:26:48.456Z</lastmod>
+    <lastmod>2017-05-09T10:51:36.966Z</lastmod>
     <data>
         <display>
         <title>React Native入门到怀疑人生（一）</title>
@@ -40,7 +84,7 @@
          
            
              
-              <breadCrumb title="Android" url="http://www.mrxyx.cn/categories/Android/"/>
+              <breadCrumb title="React Native" url="http://www.mrxyx.cn/categories/React-Native/"/>
           
         </display>
     </data>
