@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      React Native入门到怀疑人生（四） | 知,行|Mrx 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Mrx">
+    
+    
+
+    <meta name="description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章React Native入门到怀疑人生（三）我们已经讲解了RN的props属性，state状态，样式相关知识，那么本章节将讲解RN的flexbox布局，控件宽高相关知识。本章将使用ES6语法。文章不当之处，希望大家不吝赐教，多谢！">
+<meta name="keywords" content="React Native,webApp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React Native入门到怀疑人生（四） | 知,行|Mrx">
+<meta property="og:url" content="http://www.mrxyx.cn/2017/05/12/React-Native入门到怀疑人生（四）/index.html">
+<meta property="og:site_name" content="知,行|Mrx">
+<meta property="og:description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章React Native入门到怀疑人生（三）我们已经讲解了RN的props属性，state状态，样式相关知识，那么本章节将讲解RN的flexbox布局，控件宽高相关知识。本章将使用ES6语法。文章不当之处，希望大家不吝赐教，多谢！">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051501.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051502.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051503.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051504.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051505.png">
+<meta property="og:updated_time" content="2017-05-15T11:49:07.945Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React Native入门到怀疑人生（四） | 知,行|Mrx">
+<meta name="twitter:description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章React Native入门到怀疑人生（三）我们已经讲解了RN的props属性，state状态，样式相关知识，那么本章节将讲解RN的flexbox布局，控件宽高相关知识。本章将使用ES6语法。文章不当之处，希望大家不吝赐教，多谢！">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051501.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">知,行|Mrx</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          梦想星辰大海的人，注定孤独
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/Mrxyx" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">React Native入门到怀疑人生（四）</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-05-12" class="post-meta__date date">2017-05-12</time> 
+	 <span id="busuanzi_container_page_pv" class="post-meta__date date">|&nbsp;&nbsp;viewed <span id="busuanzi_value_page_pv"></span> 次</span>
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/React-Native/">React Native</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/React-Native/">React Native</a>, <a class="tags-link" href="/tags/webApp/">webApp</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章<a href="/2017/05/09/React-Native入门到怀疑人生（三）/" title="React Native入门到怀疑人生（三）">React Native入门到怀疑人生（三）</a>我们已经讲解了RN的props属性，state状态，样式相关知识，那么本章节将讲解RN的flexbox布局，控件宽高相关知识。本章将使用ES6语法。文章不当之处，希望大家不吝赐教，多谢！<br><a id="more"></a></p>
+<h2 id="宽高"><a href="#宽高" class="headerlink" title="宽高"></a>宽高</h2><p>组件的宽高，这里可以理解为Android中控件的宽高，宽和高决定了控件大小。Android中的宽高使用的单位为dp（独立像素密度）,而RN中的宽高无单位。表示了与设备像素密度无关的逻辑像素点。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">/**-----width height--------****/</div><div class="line">import React, &#123;Component&#125; from &apos;react&apos;;</div><div class="line">import &#123;AppRegistry, Text, View&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line">class FixDimensionsBasics extends Component &#123;</div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      &lt;View&gt;</div><div class="line">        &lt;View style=&#123;&#123;width: 50, height: 50, backgroundColor: &apos;powderblue&apos;&#125;&#125;/&gt;</div><div class="line">        &lt;View style=&#123;&#123;width: 100, height: 100, backgroundColor: &apos;skyblue&apos;&#125;&#125;/&gt;</div><div class="line">        &lt;View style=&#123;&#123;width: 150, height: 150, backgroundColor: &apos;steelblue&apos;&#125;&#125;/&gt;</div><div class="line">      &lt;/View&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">AppRegistry.registerComponent(&apos;FirstRNProject&apos;, ()=&gt;FixDimensionsBasics);</div></pre></td></tr></table></figure>
+<p>运行结果如下图</p>
+<center><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051501.png" alt=""></center>
+
+<blockquote>
+<p>backgroundColor参考 <a href="https://facebook.github.io/react-native/docs/colors.html" target="_blank" rel="external">https://facebook.github.io/react-native/docs/colors.html</a></p>
+</blockquote>
+<h2 id="flex布局"><a href="#flex布局" class="headerlink" title="flex布局"></a>flex布局</h2><h3 id="flex属性"><a href="#flex属性" class="headerlink" title="flex属性"></a>flex属性</h3><p>可参考android中linearLayout的layout_weight属性。在RN组件中使用flex属性，可以使其在可利用的空间中动态地扩张或收缩。</p>
+<blockquote>
+<p>组件能够撑满剩余空间的前提是其父容器的尺寸不为零。如果父容器既没有固定的width和height，也没有设定flex，则父容器的尺寸为零。其子组件如果使用了flex，也是无法显示的。</p>
+</blockquote>
+<h3 id="使用flex来布局"><a href="#使用flex来布局" class="headerlink" title="使用flex来布局"></a>使用flex来布局</h3><p>React Native中使用flexbox规则来指定某个组件的子元素的布局。Flexbox可以在不同屏幕尺寸上提供一致的布局结构。通常使用<code>flexDirection</code>，<code>alignItems</code>和<code>justifyContent</code>的组合来实现正确的布局。在使用flex布局时候，可配合<code>flexDirection</code>，<code>alignItems</code>和<code>justifyContent</code>一起来实现控件子元素的布局</p>
+<h4 id="Flex-Direction"><a href="#Flex-Direction" class="headerlink" title="Flex Direction"></a>Flex Direction</h4><p>在组件的style中指定flexDirection可以决定布局的主轴。子元素是应该沿着水平轴(row)方向排列，还是沿着竖直轴(column)方向排列呢？默认值是竖直轴(column)方向。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">// /**--------------使用flexbox布局--------------**/</div><div class="line">import React, &#123;Component&#125; from &apos;react&apos;;</div><div class="line">import &#123;AppRegistry, Text, View&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line">class FlexDirecitonBasics extends Component &#123;</div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      &lt;View style=&#123;&#123;flex:1, flexDirection: &apos;row&apos;&#125;&#125;&gt;</div><div class="line"></div><div class="line">        &lt;View style=&#123;&#123;width: 50,  backgroundColor: &apos;powderblue&apos;&#125;&#125;/&gt;</div><div class="line">        &lt;View style=&#123;&#123;width: 50,  backgroundColor: &apos;skyblue&apos;&#125;&#125;/&gt;</div><div class="line">        &lt;View style=&#123;&#123;width: 50,  backgroundColor: &apos;steelblue&apos;&#125;&#125;/&gt;</div><div class="line">      &lt;/View&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">AppRegistry.registerComponent(&apos;FirstRNProject&apos;, ()=&gt; FlexDirecitonBasics);</div></pre></td></tr></table></figure>
+<p>运行结果如下图</p>
+<center><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051502.png" alt=""></center>
+
+<h4 id="Justify-Content"><a href="#Justify-Content" class="headerlink" title="Justify Content"></a>Justify Content</h4><p>在组件的style中指定justifyContent可以决定其子元素沿着主轴的排列方式。子元素是应该靠近主轴的起始端还是末尾段分布呢？亦或应该均匀分布？对应的这些可选项有：<code>flex-start</code>、<code>center</code>、<code>flex-end</code>、<code>space-around</code>以及<code>space-between</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">// /**--------------使用flexbox布局--------------**/</div><div class="line">import React, &#123;Component&#125; from &apos;react&apos;;</div><div class="line">import &#123;AppRegistry, Text, View&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line">class FlexDirecitonBasics extends Component &#123;</div><div class="line">    render() &#123;</div><div class="line">        return (</div><div class="line">            // 尝试把`justifyContent`改为`center`看看</div><div class="line">            // 尝试把`flexDirection`改为`row`看看</div><div class="line">            &lt;View style=&#123;&#123;</div><div class="line">                flex: 1,</div><div class="line">                flexDirection: &apos;column&apos;,</div><div class="line">                justifyContent: &apos;space-between&apos;,</div><div class="line">            &#125;&#125;&gt;</div><div class="line">                &lt;View style=&#123;&#123;width: 50, height: 50, backgroundColor: &apos;powderblue&apos;&#125;&#125;/&gt;</div><div class="line">                &lt;View style=&#123;&#123;width: 50, height: 50, backgroundColor: &apos;skyblue&apos;&#125;&#125;/&gt;</div><div class="line">                &lt;View style=&#123;&#123;width: 50, height: 50, backgroundColor: &apos;steelblue&apos;&#125;&#125;/&gt;</div><div class="line">            &lt;/View&gt;</div><div class="line">        );</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">AppRegistry.registerComponent(&apos;FirstRNProject&apos;, () =&gt; FlexDirecitonBasics);</div></pre></td></tr></table></figure>
+<p>运行结果如下图</p>
+<center><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051503.png" alt=""></center>
+
+<h4 id="Align-Items"><a href="#Align-Items" class="headerlink" title="Align Items"></a>Align Items</h4><p>在组件的style中指定alignItems可以决定其子元素沿着次轴（与主轴垂直的轴，比如若主轴方向为row，则次轴方向为column）的排列方式。子元素是应该靠近次轴的起始端还是末尾段分布呢？亦或应该均匀分布？对应的这些可选项有：<code>flex-start</code>、<code>center</code>、<code>flex-end</code>以及<code>stretch</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">// /**--------------使用flexbox布局--------------**/</div><div class="line">import React, &#123;Component&#125; from &apos;react&apos;;</div><div class="line">import &#123;AppRegistry, Text, View&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line">class FlexDirecitonBasics extends Component &#123;</div><div class="line">    render() &#123;</div><div class="line">        return (</div><div class="line">            // 尝试把`alignItems`改为`flex-start`看看</div><div class="line">            // 尝试把`justifyContent`改为`flex-end`看看</div><div class="line">            // 尝试把`flexDirection`改为`row`看看</div><div class="line">            &lt;View style=&#123;&#123;</div><div class="line">                flex: 1,</div><div class="line">                flexDirection: &apos;column&apos;,</div><div class="line">                justifyContent: &apos;center&apos;,</div><div class="line">                alignItems: &apos;center&apos;,</div><div class="line">            &#125;&#125;&gt;</div><div class="line">                &lt;View style=&#123;&#123;width: 50, height: 50, backgroundColor: &apos;powderblue&apos;&#125;&#125; /&gt;</div><div class="line">                &lt;View style=&#123;&#123;width: 50, height: 50, backgroundColor: &apos;skyblue&apos;&#125;&#125; /&gt;</div><div class="line">                &lt;View style=&#123;&#123;width: 50, height: 50, backgroundColor: &apos;steelblue&apos;&#125;&#125; /&gt;</div><div class="line">            &lt;/View&gt;</div><div class="line">        );</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">AppRegistry.registerComponent(&apos;FirstRNProject&apos;, ()=&gt; FlexDirecitonBasics);</div></pre></td></tr></table></figure>
+<p>运行结果如下图</p>
+<center><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051504.png" alt=""></center>
+
+<p>关于flex相关属性，大家可以多多尝试，敲出不同的代码，来验证效果。<strong>读万卷书，敲万行代码。</strong><br>比如大家可以尝试实现如下效果</p>
+<center><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051505.png" alt=""><br></center>
+
+<p>总结</p>
+<blockquote>
+<ul>
+<li><p>1 组件的style中指定flexDirection可以决定布局的主轴沿着水平轴(row)方向排列，还是沿着竖直轴(column)方向排列,默认值是竖直轴(column)方向</p>
+</li>
+<li><p>2 组件的style中指定justifyContent可以决定其子元素沿着主轴的排列方式。元素是应该靠近主轴的起始端还是末尾段分布呢？亦或应该均匀分布?<code>flex-start</code>、<code>center</code>、<code>flex-end</code>、<code>space-around</code>以及<code>space-between</code></p>
+</li>
+<li><p>3 组件的style中指定alignItems可以决定其子元素沿着次轴（与主轴垂直的轴，比如若主轴方向为row，则次轴方向为column）的排列方式。子元素是应该靠近次轴的起始端还是末尾段分布呢？亦或应该均匀分布？<code>flex-start</code>、<code>center</code>、<code>flex-end</code>以及<code>stretch</code></p>
+</li>
+</ul>
+</blockquote>
+<p>文章不当之处请及时指出。周末朋友来南京，拖更啦~~~</p>
+<p>##参考资料</p>
+<ul>
+<li><a href="https://github.com/facebook/react-native" target="_blank" rel="external">FaceBook.github</a></li>
+<li><a href="http://reactnative.cn/" target="_blank" rel="external">ReactNative 中文网</a></li>
+</ul>
+
+  </section>
+
+  
+  
+  
+<section class="post-comments">
+<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: document.location.href, 
+    sourceId: "",
+    productKey: "33bdbc28951e4ef7a555f39a875c878a",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+</section>
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a> | 本站总点击<span id="busuanzi_value_site_pv"></span>次 | 您是第<span id="busuanzi_value_site_uv"></span>位访客</span>
+   
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?99d62de6b248a2fbdf4b9deb88ec07dc";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

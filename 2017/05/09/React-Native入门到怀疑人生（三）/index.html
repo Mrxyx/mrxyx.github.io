@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051001.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051003.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051002.png">
-<meta property="og:updated_time" content="2017-05-10T15:30:47.759Z">
+<meta property="og:updated_time" content="2017-05-15T11:49:43.399Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Native入门到怀疑人生（三） | 知,行|Mrx">
 <meta name="twitter:description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章React Native入门到怀疑人生（二）我们已经成功运行了官方Demo，介绍了React.js、ES6相关学习资料，推荐了开发RN的编辑器，那么本章节将讲解RN的props属性，state状态，样式相关知识。本章将使用ES6语法。请各位系好安全带，本章节我们将真正开始RN的开发。">
@@ -238,7 +238,8 @@ classes that you can use:
 <li><p>使用webstorm打开，</p>
 </li>
 </ul>
-<p><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051001.png" alt=""></p>
+<center><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051001.png" alt=""></center>
+
 <h2 id="Props（属性）讲解"><a href="#Props（属性）讲解" class="headerlink" title="Props（属性）讲解"></a>Props（属性）讲解</h2><p>组件（可以理解为Android的控件）在创建的时候，我们都会赋予相应的参数，这些参数就相当于props(属性)，还是上代码吧，代码理解起来简单点。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">/* *-------------props-------------**/</div><div class="line">import React, &#123;Component&#125; from &apos;react&apos;;</div><div class="line">/**</div><div class="line"> * ES6语法，等价与ES5中的</div><div class="line"> * var AppRegistry = require(&apos;./AppRegistry&apos;);</div><div class="line"> */</div><div class="line">import &#123;AppRegistry, Image&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line">class HelloReact extends Component &#123;</div><div class="line">  render() &#123;</div><div class="line">    let pic = &#123;</div><div class="line">      uri: &apos;https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg&apos;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * source就是定义的属性名称，同时通过定义的pic变量给它赋值，控制展示的图片资源</div><div class="line">     * 通过style的props来控制图片的尺寸</div><div class="line">     */</div><div class="line">    return(</div><div class="line">      &lt;Image source= &#123;pic&#125; style = &#123;&#123;width : 500 , height: 500&#125;&#125;/&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">AppRegistry.registerComponent(&apos;FirstRNProject&apos;, () =&gt; HelloReact);</div></pre></td></tr></table></figure></p>
 <p><code>代码中已添加注释</code></p>
 <p>代码中的<code>{ { pic } }</code>是JSX语法,JSX语法的基本规则如下</p>
@@ -249,7 +250,8 @@ classes that you can use:
 </ul>
 <p>代码中的 <code>import {AppRegistry, Image} from &#39;react-native&#39;</code>为ES6语法等价与ES5中的<code>var AppRegistry = require(&#39;./AppRegistry&#39;)</code></p>
 <p>代码中registerComponent()方法的第一个参数<code>&#39;FirstRNProject&#39;</code>必须和<code>android\app\src\main\java\com\firstrnproject\MainActivity</code>类中的getMainComponentName()方法返回的String保持一致</p>
-<p><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051003.png" alt=""></p>
+<center><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051003.png" alt=""></center>
+
 <h2 id="state（状态）讲解"><a href="#state（状态）讲解" class="headerlink" title="state（状态）讲解"></a>state（状态）讲解</h2><blockquote>
 <p>我们使用两种数据来控制一个组件：props和state。props是在父组件中指定，而且一经指定，在被指定的组件的生命周期中则不再改变。 对于需要改变的数据，我们需要使用state。</p>
 <p>一般来说，你需要在constructor中初始化state（译注：这是ES6的写法，早期的很多ES5的例子使用的是<code>getInitialState</code>方法来初始化state，这一做法会逐渐被淘汰），然后在需要修改时调用setState方法。</p>
@@ -266,7 +268,12 @@ classes that you can use:
 <p>实际开发中组件的样式会越来越复杂，我们建议使用StyleSheet.create来集中定义组件的样式。比如像下面这样</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">/****--------------------style-------------**/</div><div class="line">import React, &#123;Component&#125; from &apos;react&apos;;</div><div class="line">import &#123;AppRegistry, StyleSheet, Text, View&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line">class LostOfStyles extends Component &#123;</div><div class="line">  render() &#123;</div><div class="line">    return(</div><div class="line">      &lt;View&gt;</div><div class="line">        &lt;Text style=&#123;style.bigblue&#125;&gt;bigblue&lt;/Text&gt;</div><div class="line">        &lt;Text style=&#123;style.red&#125;&gt;red&lt;/Text&gt;</div><div class="line">        &lt;Text style=&#123;[style.red, style.bigblue]&#125;&gt;red, then bigblue&lt;/Text&gt;</div><div class="line">        &lt;Text style=&#123;[style.bigblue, style.red]&#125;&gt;bigblue, then red&lt;/Text&gt;</div><div class="line">      &lt;/View&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">//按顺序声明和使用style属性</div><div class="line">const style = StyleSheet.create(&#123;</div><div class="line">  bigblue: &#123;</div><div class="line">    color: &apos;blue&apos;,</div><div class="line">    fontWeight: &apos;bold&apos;,</div><div class="line">    fontSize: 30,</div><div class="line">  &#125;,</div><div class="line">  red: &#123;</div><div class="line">    color:&apos;red&apos;,</div><div class="line">  &#125;,</div><div class="line">&#125;);</div><div class="line"></div><div class="line">AppRegistry.registerComponent(&apos;FirstRNProject&apos;, ()=&gt; LostOfStyles);</div></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051002.png" alt=""><br>样式基本使用和JavaScript里面的使用一样，暂时不做赘述。</p>
+<p><center><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051002.png" alt=""></center><br>样式基本使用和JavaScript里面的使用一样，暂时不做赘述。</p>
+<p>##参考资料</p>
+<ul>
+<li><a href="https://github.com/facebook/react-native" target="_blank" rel="external">FaceBook.github</a></li>
+<li><a href="http://reactnative.cn/" target="_blank" rel="external">ReactNative 中文网</a></li>
+</ul>
 
   </section>
 
