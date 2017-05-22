@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      React Native入门到怀疑人生（五） | 知,行|Mrx 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Mrx">
+    
+    
+
+    <meta name="description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章React Native入门到怀疑人生（四）我们已经讲解了flexbox布局，控件宽高相关知识，本章节将讲解RN的SrollView,ListView,和网络相关知识。本章将使用ES6语法。文章不当之处，希望大家不吝赐教，多谢！">
+<meta name="keywords" content="React Native,webApp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React Native入门到怀疑人生（五） | 知,行|Mrx">
+<meta property="og:url" content="http://www.mrxyx.cn/2017/05/22/React-Native入门到怀疑人生（五）/index.html">
+<meta property="og:site_name" content="知,行|Mrx">
+<meta property="og:description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章React Native入门到怀疑人生（四）我们已经讲解了flexbox布局，控件宽高相关知识，本章节将讲解RN的SrollView,ListView,和网络相关知识。本章将使用ES6语法。文章不当之处，希望大家不吝赐教，多谢！">
+<meta property="og:updated_time" content="2017-05-22T14:26:32.747Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React Native入门到怀疑人生（五） | 知,行|Mrx">
+<meta name="twitter:description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章React Native入门到怀疑人生（四）我们已经讲解了flexbox布局，控件宽高相关知识，本章节将讲解RN的SrollView,ListView,和网络相关知识。本章将使用ES6语法。文章不当之处，希望大家不吝赐教，多谢！">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">知,行|Mrx</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          梦想星辰大海的人，注定孤独
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/Mrxyx" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">React Native入门到怀疑人生（五）</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2017-05-22" class="post-meta__date date">2017-05-22</time> 
+	 <span id="busuanzi_container_page_pv" class="post-meta__date date">|&nbsp;&nbsp;viewed <span id="busuanzi_value_page_pv"></span> 次</span>
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/categories/React-Native/">React Native</a>
+            </font>
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/React-Native/">React Native</a>, <a class="tags-link" href="/tags/webApp/">webApp</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章<a href="/2017/05/12/React-Native入门到怀疑人生（四）/" title="React Native入门到怀疑人生（四）">React Native入门到怀疑人生（四）</a>我们已经讲解了flexbox布局，控件宽高相关知识，本章节将讲解RN的SrollView,ListView,和网络相关知识。本章将使用ES6语法。文章不当之处，希望大家不吝赐教，多谢！<br><a id="more"></a></p>
+<h2 id="ScrollView"><a href="#ScrollView" class="headerlink" title="ScrollView"></a>ScrollView</h2><p>哇！好熟悉啊！没错RN中的ScrollView和Android中的ScrollView控件概念基本相同。but,如下</p>
+<blockquote>
+<p>ScrollView最适合展示少量有限尺寸的东西。 ScrollView的所有元素和视图都将被渲染，即使它们当前未显示在屏幕上。如果您有更长的项目列表可以在屏幕上，您应该使用ListView代替。</p>
+</blockquote>
+<p>ScrollView渲染视图，会全部渲染。所以使用需要谨慎，防止过度渲染。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">/********-----------------scrollview--------------------******///会渲染过度 推荐使用listview</div><div class="line">import React, &#123;Component&#125; from &apos;react&apos;;</div><div class="line">import &#123;AppRegistry, Text, Image, ScrollView&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line">class IScrolledDownAndWhatHappenedNextShockedMe extends Component &#123;</div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      &lt;ScrollView&gt;</div><div class="line">        &lt;Text style=&#123;&#123;fontSize: 20&#125;&#125;&gt;Scroll me&lt;/Text&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Text style=&#123;&#123;fontSize:20&#125;&#125;&gt;If you like&lt;/Text&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Text style=&#123;&#123;fontSize:20&#125;&#125;&gt;If you like&lt;/Text&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125; style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">      &lt;/ScrollView&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">AppRegistry.registerComponent(&apos;FirstRNProject&apos;, () =&gt; IScrolledDownAndWhatHappenedNextShockedMe);</div></pre></td></tr></table></figure>
+<p>gif图录制没搞，暂时就不放图</p>
+<h2 id="ListView"><a href="#ListView" class="headerlink" title="ListView"></a>ListView</h2><blockquote>
+<p>金风玉露一相逢,便胜却人间无数</p>
+</blockquote>
+<p>as you think.RN的ListView和Android的listView概念相似。同样需要数据源（dataSource），和解析数据并展示到条目（renderRow）。同时，在初始化ListView的时候，你需要监听rowHasChanged函数，来判断某行数据是否变化，这是必须的属性。当然，你可以发挥你的想象，在Andorid中ListView的属性，都可以移植到RN当中来。至于，具体的用法，会在后面的具体项目中进行实践，敬请期待！</p>
+<p>废话不多说，代码上见，如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">/************-------------------listview---------------*******/</div><div class="line"></div><div class="line">import React, &#123;Component&#125; from &apos;react&apos;;</div><div class="line">import &#123;AppRegistry, Text, Image, ListView, View&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line">class ListViewBasics extends Component &#123;</div><div class="line"></div><div class="line">  constructor(props) &#123;</div><div class="line">    super(props);</div><div class="line">    const ds = new ListView.DataSource(&#123;rowHasChanged: (r1, r2) =&gt; r1 !== r2&#125;);</div><div class="line"></div><div class="line">    this.state = &#123;</div><div class="line">      dataSource: ds.cloneWithRows([</div><div class="line">        &apos;xyx&apos;, &apos;hl&apos;, &apos;yxix&apos;, &apos;lh&apos;, &apos;yxiac&apos;, &apos;yxxiac&apos;</div><div class="line">      ])</div><div class="line">    &#125;;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      &lt;View style=&#123;&#123;flex:1, paddingTop: 22&#125;&#125;&gt;</div><div class="line"></div><div class="line">        &lt;ListView</div><div class="line">          dataSource=&#123;this.state.dataSource&#125;</div><div class="line">          renderRow=&#123;(rowData, rowId) =&gt; &lt;Text style=&#123;&#123;height: 500&#125;&#125;&gt;&#123;rowData+rowId&#125;&lt;/Text&gt;&#125;/&gt;</div><div class="line"></div><div class="line">      &lt;/View&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">AppRegistry.registerComponent(&apos;FirstRNProject&apos;, () =&gt; ListViewBasics);</div></pre></td></tr></table></figure>
+<p>gif图录制没搞，暂时就不放图</p>
+<p>//TODO 相同的数据在ListView和ScrollView中过渡渲染的效果展示</p>
+<h2 id="NetWork"><a href="#NetWork" class="headerlink" title="NetWork"></a>NetWork</h2><p>React Native提供了和web标准一致的Fetch API，so，<a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank" rel="external">you need look fetch</a>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">/************------------------network------------------*********/</div><div class="line">import React, &#123;Component&#125; from &apos;react&apos;;</div><div class="line">import &#123;AppRegistry, ListView, Text, View&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line"></div><div class="line">getMoviesFromApiAsync()</div><div class="line">&#123;</div><div class="line">  return fetch(&apos;https://facebook.github.io/react-native/movies.json&apos;)</div><div class="line">    .then((response) =&gt; response.json())</div><div class="line">    .then((responseJson) =&gt; &#123;</div><div class="line">      return responseJson.movies;</div><div class="line">    &#125;)</div><div class="line">    .catch((error) =&gt; &#123;</div><div class="line">      console.error(error);</div><div class="line">    &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">// //ES7语法</div><div class="line">// async getMoviesFromApi()</div><div class="line">// &#123;</div><div class="line">//   try &#123;</div><div class="line">//     let response = await fetch(&apos;https://facebook.github.io/react-native/movies.json&apos;);</div><div class="line">//     let responseJson = await response.json();</div><div class="line">//     return responseJson.movies;</div><div class="line">//   &#125; catch (error) &#123;</div><div class="line">//     console.error(error);</div><div class="line">//   &#125;</div><div class="line">// &#125;</div></pre></td></tr></table></figure>
+<p>代码如上图，其中的<code>.then</code>是因为使用<code>fethc()</code>会返回一个<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="external">Promise</a>,即简化异步风格的代码。这里有木有和RxJava很像呀😀</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>刚开始写RN系列，是想分享下自己的学习过程，但是写到这里渐渐发现，如果继续按照此步骤写下去，感觉就有点乏善可陈。<br>同样一门新技术的学习，必不可少的是练习练习再练习，不敢保证所有人都是通过练习来学习的，但是至少百分之95的人都是这样的。毕竟，如果一味的看别人的教程，在实际遇到的情况下，大部分人都是哈希蒙蔽。<br>所以，接下来，本站RN系列准备出一个实战的RN项目，作为此系列的终章，希望大家新技术玩的开心，敬请期待！么么哒~</p>
+
+  </section>
+
+  
+  
+  
+<section class="post-comments">
+<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: document.location.href, 
+    sourceId: "",
+    productKey: "33bdbc28951e4ef7a555f39a875c878a",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+</section>
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a> | 本站总点击<span id="busuanzi_value_site_pv"></span>次 | 您是第<span id="busuanzi_value_site_uv"></span>位访客</span>
+   
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?99d62de6b248a2fbdf4b9deb88ec07dc";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
