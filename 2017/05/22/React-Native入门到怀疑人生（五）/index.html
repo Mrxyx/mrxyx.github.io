@@ -115,7 +115,7 @@
 <meta property="og:url" content="http://www.mrxyx.cn/2017/05/22/React-Native入门到怀疑人生（五）/index.html">
 <meta property="og:site_name" content="知,行|Mrx">
 <meta property="og:description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章React Native入门到怀疑人生（四）我们已经讲解了flexbox布局，控件宽高相关知识，本章节将讲解RN的SrollView,ListView,和网络相关知识。本章将使用ES6语法。文章不当之处，希望大家不吝赐教，多谢！">
-<meta property="og:updated_time" content="2017-05-22T14:26:32.747Z">
+<meta property="og:updated_time" content="2017-05-29T19:07:26.796Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Native入门到怀疑人生（五）">
 <meta name="twitter:description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章React Native入门到怀疑人生（四）我们已经讲解了flexbox布局，控件宽高相关知识，本章节将讲解RN的SrollView,ListView,和网络相关知识。本章将使用ES6语法。文章不当之处，希望大家不吝赐教，多谢！">
@@ -275,9 +275,43 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -409,18 +443,18 @@
 <p>ScrollView最适合展示少量有限尺寸的东西。 ScrollView的所有元素和视图都将被渲染，即使它们当前未显示在屏幕上。如果您有更长的项目列表可以在屏幕上，您应该使用ListView代替。</p>
 </blockquote>
 <p>ScrollView渲染视图，会全部渲染。所以使用需要谨慎，防止过度渲染。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">/********-----------------scrollview--------------------******///会渲染过度 推荐使用listview</div><div class="line">import React, &#123;Component&#125; from &apos;react&apos;;</div><div class="line">import &#123;AppRegistry, Text, Image, ScrollView&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line">class IScrolledDownAndWhatHappenedNextShockedMe extends Component &#123;</div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      &lt;ScrollView&gt;</div><div class="line">        &lt;Text style=&#123;&#123;fontSize: 20&#125;&#125;&gt;Scroll me&lt;/Text&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Text style=&#123;&#123;fontSize:20&#125;&#125;&gt;If you like&lt;/Text&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Text style=&#123;&#123;fontSize:20&#125;&#125;&gt;If you like&lt;/Text&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125; style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: &apos;https://facebook.github.io/react/img/logo_og.png&apos;&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">      &lt;/ScrollView&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">AppRegistry.registerComponent(&apos;FirstRNProject&apos;, () =&gt; IScrolledDownAndWhatHappenedNextShockedMe);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/********-----------------scrollview--------------------******/</span><span class="comment">//会渲染过度 推荐使用listview</span></div><div class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> &#123;AppRegistry, Text, Image, ScrollView&#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">IScrolledDownAndWhatHappenedNextShockedMe</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;ScrollView&gt;</div><div class="line">        &lt;Text style=&#123;&#123;fontSize: 20&#125;&#125;&gt;Scroll me&lt;/Text&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: 'https://facebook.github.io/react/img/logo_og.png'&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: 'https://facebook.github.io/react/img/logo_og.png'&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: 'https://facebook.github.io/react/img/logo_og.png'&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: 'https://facebook.github.io/react/img/logo_og.png'&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: 'https://facebook.github.io/react/img/logo_og.png'&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: 'https://facebook.github.io/react/img/logo_og.png'&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: 'https://facebook.github.io/react/img/logo_og.png'&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: 'https://facebook.github.io/react/img/logo_og.png'&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Text style=&#123;&#123;fontSize:20&#125;&#125;&gt;If you like&lt;/Text&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: 'https://facebook.github.io/react/img/logo_og.png'&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: 'https://facebook.github.io/react/img/logo_og.png'&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: 'https://facebook.github.io/react/img/logo_og.png'&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: 'https://facebook.github.io/react/img/logo_og.png'&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: 'https://facebook.github.io/react/img/logo_og.png'&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: 'https://facebook.github.io/react/img/logo_og.png'&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Text style=&#123;&#123;fontSize:20&#125;&#125;&gt;If you like&lt;/Text&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: 'https://facebook.github.io/react/img/logo_og.png'&#125;&#125; style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: 'https://facebook.github.io/react/img/logo_og.png'&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: 'https://facebook.github.io/react/img/logo_og.png'&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: 'https://facebook.github.io/react/img/logo_og.png'&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">        &lt;Image source=&#123;&#123;uri: 'https://facebook.github.io/react/img/logo_og.png'&#125;&#125;style=&#123;&#123;width: 40, height: 40&#125;&#125;/&gt;</div><div class="line">      &lt;/ScrollView&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">AppRegistry.registerComponent('FirstRNProject', () =&gt; IScrolledDownAndWhatHappenedNextShockedMe);</div></pre></td></tr></table></figure>
 <p>gif图录制没搞，暂时就不放图</p>
 <h2 id="ListView"><a href="#ListView" class="headerlink" title="ListView"></a>ListView</h2><blockquote>
 <p>金风玉露一相逢,便胜却人间无数</p>
 </blockquote>
 <p>as you think.RN的ListView和Android的listView概念相似。同样需要数据源（dataSource），和解析数据并展示到条目（renderRow）。同时，在初始化ListView的时候，你需要监听rowHasChanged函数，来判断某行数据是否变化，这是必须的属性。当然，你可以发挥你的想象，在Andorid中ListView的属性，都可以移植到RN当中来。至于，具体的用法，会在后面的具体项目中进行实践，敬请期待！</p>
 <p>废话不多说，代码上见，如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">/************-------------------listview---------------*******/</div><div class="line"></div><div class="line">import React, &#123;Component&#125; from &apos;react&apos;;</div><div class="line">import &#123;AppRegistry, Text, Image, ListView, View&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line">class ListViewBasics extends Component &#123;</div><div class="line"></div><div class="line">  constructor(props) &#123;</div><div class="line">    super(props);</div><div class="line">    const ds = new ListView.DataSource(&#123;rowHasChanged: (r1, r2) =&gt; r1 !== r2&#125;);</div><div class="line"></div><div class="line">    this.state = &#123;</div><div class="line">      dataSource: ds.cloneWithRows([</div><div class="line">        &apos;xyx&apos;, &apos;hl&apos;, &apos;yxix&apos;, &apos;lh&apos;, &apos;yxiac&apos;, &apos;yxxiac&apos;</div><div class="line">      ])</div><div class="line">    &#125;;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    return (</div><div class="line">      &lt;View style=&#123;&#123;flex:1, paddingTop: 22&#125;&#125;&gt;</div><div class="line"></div><div class="line">        &lt;ListView</div><div class="line">          dataSource=&#123;this.state.dataSource&#125;</div><div class="line">          renderRow=&#123;(rowData, rowId) =&gt; &lt;Text style=&#123;&#123;height: 500&#125;&#125;&gt;&#123;rowData+rowId&#125;&lt;/Text&gt;&#125;/&gt;</div><div class="line"></div><div class="line">      &lt;/View&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">AppRegistry.registerComponent(&apos;FirstRNProject&apos;, () =&gt; ListViewBasics);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/************-------------------listview---------------*******/</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> &#123;AppRegistry, Text, Image, ListView, View&#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListViewBasics</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line"></div><div class="line">  <span class="keyword">constructor</span>(props) &#123;</div><div class="line">    <span class="keyword">super</span>(props);</div><div class="line">    <span class="keyword">const</span> ds = <span class="keyword">new</span> ListView.DataSource(&#123;<span class="attr">rowHasChanged</span>: <span class="function">(<span class="params">r1, r2</span>) =&gt;</span> r1 !== r2&#125;);</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.state = &#123;</div><div class="line">      <span class="attr">dataSource</span>: ds.cloneWithRows([</div><div class="line">        <span class="string">'xyx'</span>, <span class="string">'hl'</span>, <span class="string">'yxix'</span>, <span class="string">'lh'</span>, <span class="string">'yxiac'</span>, <span class="string">'yxxiac'</span></div><div class="line">      ])</div><div class="line">    &#125;;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;View style=&#123;&#123;flex:1, paddingTop: 22&#125;&#125;&gt;</div><div class="line"></div><div class="line">        &lt;ListView</div><div class="line">          dataSource=&#123;this.state.dataSource&#125;</div><div class="line">          renderRow=&#123;(rowData, rowId) =&gt; &lt;Text style=&#123;&#123;height: 500&#125;&#125;&gt;&#123;rowData+rowId&#125;&lt;/Text&gt;&#125;/&gt;</div><div class="line"></div><div class="line">      &lt;/View&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">AppRegistry.registerComponent('FirstRNProject', () =&gt; ListViewBasics);</div></pre></td></tr></table></figure>
 <p>gif图录制没搞，暂时就不放图</p>
 <p>//TODO 相同的数据在ListView和ScrollView中过渡渲染的效果展示</p>
 <h2 id="NetWork"><a href="#NetWork" class="headerlink" title="NetWork"></a>NetWork</h2><p>React Native提供了和web标准一致的Fetch API，so，<a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank" rel="external">you need look fetch</a>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">/************------------------network------------------*********/</div><div class="line">import React, &#123;Component&#125; from &apos;react&apos;;</div><div class="line">import &#123;AppRegistry, ListView, Text, View&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line"></div><div class="line">getMoviesFromApiAsync()</div><div class="line">&#123;</div><div class="line">  return fetch(&apos;https://facebook.github.io/react-native/movies.json&apos;)</div><div class="line">    .then((response) =&gt; response.json())</div><div class="line">    .then((responseJson) =&gt; &#123;</div><div class="line">      return responseJson.movies;</div><div class="line">    &#125;)</div><div class="line">    .catch((error) =&gt; &#123;</div><div class="line">      console.error(error);</div><div class="line">    &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">// //ES7语法</div><div class="line">// async getMoviesFromApi()</div><div class="line">// &#123;</div><div class="line">//   try &#123;</div><div class="line">//     let response = await fetch(&apos;https://facebook.github.io/react-native/movies.json&apos;);</div><div class="line">//     let responseJson = await response.json();</div><div class="line">//     return responseJson.movies;</div><div class="line">//   &#125; catch (error) &#123;</div><div class="line">//     console.error(error);</div><div class="line">//   &#125;</div><div class="line">// &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/************------------------network------------------*********/</span></div><div class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> &#123;AppRegistry, ListView, Text, View&#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</div><div class="line"></div><div class="line"></div><div class="line">getMoviesFromApiAsync()</div><div class="line">&#123;</div><div class="line">  <span class="keyword">return</span> fetch(<span class="string">'https://facebook.github.io/react-native/movies.json'</span>)</div><div class="line">    .then(<span class="function">(<span class="params">response</span>) =&gt;</span> response.json())</div><div class="line">    .then(<span class="function">(<span class="params">responseJson</span>) =&gt;</span> &#123;</div><div class="line">      <span class="keyword">return</span> responseJson.movies;</div><div class="line">    &#125;)</div><div class="line">    .catch(<span class="function">(<span class="params">error</span>) =&gt;</span> &#123;</div><div class="line">      <span class="built_in">console</span>.error(error);</div><div class="line">    &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// //ES7语法</span></div><div class="line"><span class="comment">// async getMoviesFromApi()</span></div><div class="line"><span class="comment">// &#123;</span></div><div class="line"><span class="comment">//   try &#123;</span></div><div class="line"><span class="comment">//     let response = await fetch('https://facebook.github.io/react-native/movies.json');</span></div><div class="line"><span class="comment">//     let responseJson = await response.json();</span></div><div class="line"><span class="comment">//     return responseJson.movies;</span></div><div class="line"><span class="comment">//   &#125; catch (error) &#123;</span></div><div class="line"><span class="comment">//     console.error(error);</span></div><div class="line"><span class="comment">//   &#125;</span></div><div class="line"><span class="comment">// &#125;</span></div></pre></td></tr></table></figure>
 <p>代码如上图，其中的<code>.then</code>是因为使用<code>fethc()</code>会返回一个<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank" rel="external">Promise</a>,即简化异步风格的代码。这里有木有和RxJava很像呀😀</p>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>刚开始写RN系列，是想分享下自己的学习过程，但是写到这里渐渐发现，如果继续按照此步骤写下去，感觉就有点乏善可陈。<br>同样一门新技术的学习，必不可少的是练习练习再练习，不敢保证所有人都是通过练习来学习的，但是至少百分之95的人都是这样的。毕竟，如果一味的看别人的教程，在实际遇到的情况下，大部分人都是哈希蒙蔽。<br>所以，接下来，本站RN系列准备出一个实战的RN项目，作为此系列的终章，希望大家新技术玩的开心，敬请期待！么么哒~</p>
 
@@ -842,6 +876,323 @@
 
 
   
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
 

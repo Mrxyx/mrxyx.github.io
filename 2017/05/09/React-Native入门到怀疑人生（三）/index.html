@@ -118,7 +118,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051001.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051003.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051002.png">
-<meta property="og:updated_time" content="2017-05-15T11:49:43.399Z">
+<meta property="og:updated_time" content="2017-05-29T19:05:58.277Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Native入门到怀疑人生（三）">
 <meta name="twitter:description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章React Native入门到怀疑人生（二）我们已经成功运行了官方Demo，介绍了React.js、ES6相关学习资料，推荐了开发RN的编辑器，那么本章节将讲解RN的props属性，state状态，样式相关知识。本章将使用ES6语法。请各位系好安全带，本章节我们将真正开始RN的开发。">
@@ -279,9 +279,43 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -418,7 +452,8 @@
 </ul>
 <center><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051001.png" alt=""></center>
 
-<h2 id="Props（属性）讲解"><a href="#Props（属性）讲解" class="headerlink" title="Props（属性）讲解"></a>Props（属性）讲解</h2><p>组件（可以理解为Android的控件）在创建的时候，我们都会赋予相应的参数，这些参数就相当于props(属性)，还是上代码吧，代码理解起来简单点。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">/* *-------------props-------------**/</div><div class="line">import React, &#123;Component&#125; from &apos;react&apos;;</div><div class="line">/**</div><div class="line"> * ES6语法，等价与ES5中的</div><div class="line"> * var AppRegistry = require(&apos;./AppRegistry&apos;);</div><div class="line"> */</div><div class="line">import &#123;AppRegistry, Image&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line">class HelloReact extends Component &#123;</div><div class="line">  render() &#123;</div><div class="line">    let pic = &#123;</div><div class="line">      uri: &apos;https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg&apos;</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    /**</div><div class="line">     * source就是定义的属性名称，同时通过定义的pic变量给它赋值，控制展示的图片资源</div><div class="line">     * 通过style的props来控制图片的尺寸</div><div class="line">     */</div><div class="line">    return(</div><div class="line">      &lt;Image source= &#123;pic&#125; style = &#123;&#123;width : 500 , height: 500&#125;&#125;/&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">AppRegistry.registerComponent(&apos;FirstRNProject&apos;, () =&gt; HelloReact);</div></pre></td></tr></table></figure></p>
+<h2 id="Props（属性）讲解"><a href="#Props（属性）讲解" class="headerlink" title="Props（属性）讲解"></a>Props（属性）讲解</h2><p>组件（可以理解为Android的控件）在创建的时候，我们都会赋予相应的参数，这些参数就相当于props(属性)，还是上代码吧，代码理解起来简单点。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* *-------------props-------------**/</span></div><div class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="comment">/**</span></div><div class="line"> * ES6语法，等价与ES5中的</div><div class="line"> * var AppRegistry = require('./AppRegistry');</div><div class="line"> */</div><div class="line"><span class="keyword">import</span> &#123;AppRegistry, Image&#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">HelloReact</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">let</span> pic = &#123;</div><div class="line">      <span class="attr">uri</span>: <span class="string">'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'</span></div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * source就是定义的属性名称，同时通过定义的pic变量给它赋值，控制展示的图片资源</div><div class="line">     * 通过style的props来控制图片的尺寸</div><div class="line">     */</div><div class="line">    <span class="keyword">return</span>(</div><div class="line">      &lt;Image source= &#123;pic&#125; style = &#123;&#123;width : 500 , height: 500&#125;&#125;/&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">AppRegistry.registerComponent('FirstRNProject', () =&gt; HelloReact);</div></pre></td></tr></table></figure>
 <p><code>代码中已添加注释</code></p>
 <p>代码中的<code>{ { pic } }</code>是JSX语法,JSX语法的基本规则如下</p>
 <ul>
@@ -436,16 +471,15 @@
 <p>假如我们需要制作一段不停闪烁的文字。文字内容本身在组件创建时就已经指定好了，所以文字内容应该是一个prop。而文字的显示或隐藏的状态（快速的显隐切换就产生了闪烁的效果）则是随着时间变化的，因此这一状态应该写到state中。</p>
 </blockquote>
 <p>摘自ReactNative中文网，这段话对state的描述非常透彻。<br>这里补充一点getInitialState方法在很多现有的库中发现此类写法，其实就是对state进行赋值的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">/**---------------- state------------**/</div><div class="line">import React, &#123;Component&#125; from &apos;react&apos;;</div><div class="line">import &#123;AppRegistry, Text, View&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line"></div><div class="line">class Blink extends Component &#123;</div><div class="line">  constructor(props) &#123;</div><div class="line">    super(props);</div><div class="line">	//初始化状态值</div><div class="line">    this.state = &#123; showText : true&#125;;</div><div class="line">    //开启定时任务，隔1s取反状态值</div><div class="line">    setInterval(() =&gt; &#123;</div><div class="line">      this.setState(previousState =&gt;  &#123;</div><div class="line">        return &#123;showText:!previousState.showText&#125;;</div><div class="line"></div><div class="line">      &#125;)</div><div class="line">    &#125;, 1000);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    let display = this.state.showText? this.props.text:&apos;&apos;;</div><div class="line">    return (</div><div class="line">        // 根据当前showText的值决定是否显示text内容，布局会根据属性值自动重新渲染text</div><div class="line">      &lt;Text&gt;&#123;display&#125;&lt;/Text&gt;</div><div class="line">    );</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">class BlinkApp extends Component&#123;</div><div class="line">  render() &#123;</div><div class="line">    return(</div><div class="line">      &lt;View&gt;</div><div class="line">        &lt;Blink text = &apos;I Love You&apos;/&gt;</div><div class="line">        &lt;Blink text = &apos;I Love You&apos;/&gt;</div><div class="line">        &lt;Blink text = &apos;I Love You&apos;/&gt;</div><div class="line">        &lt;Blink text = &apos;I Love You&apos;/&gt;</div><div class="line"></div><div class="line">      &lt;/View&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">AppRegistry.registerComponent(&apos;FirstRNProject&apos;, () =&gt; BlinkApp);</div></pre></td></tr></table></figure>
-<p><br><br>代码中的<code>=&gt;</code>箭头函数为ES6语法可参考下面代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// ES5  </div><div class="line">var selected = allJobs.filter(function (job) &#123;  </div><div class="line">  return job.isSelected();  </div><div class="line">&#125;);  </div><div class="line">  </div><div class="line">// ES6  </div><div class="line">var selected = allJobs.filter(job =&gt; job.isSelected());</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/ ES5  </div><div class="line">$(&quot;#btn&quot;).click(function (event) &#123;  </div><div class="line">  dosomeing.... </div><div class="line">&#125;);  </div><div class="line">// ES6  </div><div class="line">$(&quot;#btn&quot;).click(event =&gt; &#123;  </div><div class="line">  dosomeing....</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">/**---------------- state------------**/</div><div class="line">import React, &#123;Component&#125; from 'react';</div><div class="line">import &#123;AppRegistry, Text, View&#125; from 'react-native';</div><div class="line"></div><div class="line"></div><div class="line">class Blink extends Component &#123;</div><div class="line">  constructor(props) &#123;</div><div class="line">    super(props);</div><div class="line">	//初始化状态值</div><div class="line">    this.state = &#123; showText : true&#125;;</div><div class="line">    //开启定时任务，隔1s取反状态值</div><div class="line">    setInterval(() =&gt; &#123;</div><div class="line">      this.setState(previousState =&gt;  &#123;</div><div class="line">        return &#123;showText:!previousState.showText&#125;;</div><div class="line"></div><div class="line">      &#125;)</div><div class="line">    &#125;, 1000);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  render() &#123;</div><div class="line">    let display = this.state.showText? this.props.text:'';</div><div class="line">    return (</div><div class="line">        // 根据当前showText的值决定是否显示text内容，布局会根据属性值自动重新渲染text</div><div class="line">      &lt;Text&gt;&#123;display&#125;&lt;/Text&gt;</div><div class="line">    );</div><div class="line">  &#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">class BlinkApp extends Component&#123;</div><div class="line">  render() &#123;</div><div class="line">    return(</div><div class="line">      &lt;View&gt;</div><div class="line">        &lt;Blink text = 'I Love You'/&gt;</div><div class="line">        &lt;Blink text = 'I Love You'/&gt;</div><div class="line">        &lt;Blink text = 'I Love You'/&gt;</div><div class="line">        &lt;Blink text = 'I Love You'/&gt;</div><div class="line"></div><div class="line">      &lt;/View&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">AppRegistry.registerComponent('FirstRNProject', () =&gt; BlinkApp);</div></pre></td></tr></table></figure>
+<p><br><br>代码中的<code>=&gt;</code>箭头函数为ES6语法可参考下面代码<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">// ES5  </div><div class="line">var selected = allJobs.filter(function (job) &#123;  </div><div class="line">  return job.isSelected();  </div><div class="line">&#125;);  </div><div class="line">  </div><div class="line">// ES6  </div><div class="line">var selected = allJobs.filter(job =&gt; job.isSelected());  </div><div class="line">~~~</div><div class="line">~~~</div><div class="line">/ ES5  </div><div class="line">$("#btn").click(function (event) &#123;  </div><div class="line">  dosomeing.... </div><div class="line">&#125;);  </div><div class="line">// ES6  </div><div class="line">$("#btn").click(event =&gt; &#123;  </div><div class="line">  dosomeing....</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <p>😂不会录gif,后期补充</p>
 <h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><blockquote>
 <p>在React Native中，你并不需要学习什么特殊的语法来定义样式。我们仍然是使用JavaScript来写样式。所有的核心组件都接受名为style的属性。这些样式名基本上是遵循了web上的CSS的命名，只是按照JS的语法要求使用了驼峰命名法，例如将background-color改为backgroundColor。</p>
 <p>style属性可以是一个普通的JavaScript对象。这是最简单的用法，因而在示例代码中很常见。你还可以传入一个数组——在数组中位置居后的样式对象比居前的优先级更高，这样你可以间接实现样式的继承。</p>
 <p>实际开发中组件的样式会越来越复杂，我们建议使用StyleSheet.create来集中定义组件的样式。比如像下面这样</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">/****--------------------style-------------**/</div><div class="line">import React, &#123;Component&#125; from &apos;react&apos;;</div><div class="line">import &#123;AppRegistry, StyleSheet, Text, View&#125; from &apos;react-native&apos;;</div><div class="line"></div><div class="line">class LostOfStyles extends Component &#123;</div><div class="line">  render() &#123;</div><div class="line">    return(</div><div class="line">      &lt;View&gt;</div><div class="line">        &lt;Text style=&#123;style.bigblue&#125;&gt;bigblue&lt;/Text&gt;</div><div class="line">        &lt;Text style=&#123;style.red&#125;&gt;red&lt;/Text&gt;</div><div class="line">        &lt;Text style=&#123;[style.red, style.bigblue]&#125;&gt;red, then bigblue&lt;/Text&gt;</div><div class="line">        &lt;Text style=&#123;[style.bigblue, style.red]&#125;&gt;bigblue, then red&lt;/Text&gt;</div><div class="line">      &lt;/View&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">//按顺序声明和使用style属性</div><div class="line">const style = StyleSheet.create(&#123;</div><div class="line">  bigblue: &#123;</div><div class="line">    color: &apos;blue&apos;,</div><div class="line">    fontWeight: &apos;bold&apos;,</div><div class="line">    fontSize: 30,</div><div class="line">  &#125;,</div><div class="line">  red: &#123;</div><div class="line">    color:&apos;red&apos;,</div><div class="line">  &#125;,</div><div class="line">&#125;);</div><div class="line"></div><div class="line">AppRegistry.registerComponent(&apos;FirstRNProject&apos;, ()=&gt; LostOfStyles);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/****--------------------style-------------**/</span></div><div class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> &#123;AppRegistry, StyleSheet, Text, View&#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">LostOfStyles</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span>(</div><div class="line">      &lt;View&gt;</div><div class="line">        &lt;Text style=&#123;style.bigblue&#125;&gt;bigblue&lt;/Text&gt;</div><div class="line">        &lt;Text style=&#123;style.red&#125;&gt;red&lt;/Text&gt;</div><div class="line">        &lt;Text style=&#123;[style.red, style.bigblue]&#125;&gt;red, then bigblue&lt;/Text&gt;</div><div class="line">        &lt;Text style=&#123;[style.bigblue, style.red]&#125;&gt;bigblue, then red&lt;/Text&gt;</div><div class="line">      &lt;/View&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//按顺序声明和使用style属性</span></div><div class="line"><span class="keyword">const</span> style = StyleSheet.create(&#123;</div><div class="line">  <span class="attr">bigblue</span>: &#123;</div><div class="line">    <span class="attr">color</span>: <span class="string">'blue'</span>,</div><div class="line">    <span class="attr">fontWeight</span>: <span class="string">'bold'</span>,</div><div class="line">    <span class="attr">fontSize</span>: <span class="number">30</span>,</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">red</span>: &#123;</div><div class="line">    <span class="attr">color</span>:<span class="string">'red'</span>,</div><div class="line">  &#125;,</div><div class="line">&#125;);</div><div class="line"></div><div class="line">AppRegistry.registerComponent(<span class="string">'FirstRNProject'</span>, ()=&gt; LostOfStyles);</div></pre></td></tr></table></figure>
 <p><center><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051002.png" alt=""></center><br>样式基本使用和JavaScript里面的使用一样，暂时不做赘述。</p>
 <p>##参考资料</p>
 <ul>
@@ -871,6 +905,323 @@
 
 
   
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
 
