@@ -115,7 +115,7 @@
 <meta property="og:url" content="http://www.mrxyx.cn/2017/06/05/Java反射学习实践/index.html">
 <meta property="og:site_name" content="知,行|Mrx">
 <meta property="og:description" content="简单来说，Java中通过反射，可以在运行时获得程序自身的信息，并且可以操作类或对象的内部属性。">
-<meta property="og:updated_time" content="2017-06-05T13:06:24.594Z">
+<meta property="og:updated_time" content="2017-06-05T13:44:12.199Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java反射学习实践">
 <meta name="twitter:description" content="简单来说，Java中通过反射，可以在运行时获得程序自身的信息，并且可以操作类或对象的内部属性。">
@@ -450,7 +450,117 @@
 <li>4.在运行时调用任意一个对象的方法</li>
 </ul>
 <h2 id="class类"><a href="#class类" class="headerlink" title="class类"></a>class类</h2><p>提到反射，我们需要先声明下Java中的class类,as we know,所有的java类均继承了Object类，在Object类中定义了一个getClass()方法，该方法返回一个类型为Class的对象。如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Class testc = textField.getClass();<span class="comment">//textField为JTextField对象</span></div></pre></td></tr></table></figure></p>
-<p>通过testc对象我们可以访问到JTextFiel的描述信息：主要描述信息如下<br>列A|列B<br>　　—|—<br>　　数据A|数据B<br>　　数据C|数据D</p>
+<p>通过testc对象我们可以访问到JTextFiel的描述信息：主要描述信息如下</p>
+<table>
+<thead>
+<tr>
+<th>访问方法</th>
+<th style="text-align:left">返回值类型</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getPackage()</td>
+<td style="text-align:left">Package对象</td>
+<td style="text-align:left">获得该类的存放路径</td>
+</tr>
+<tr>
+<td>getName()</td>
+<td style="text-align:left">String对象</td>
+<td style="text-align:left">该类的名称</td>
+</tr>
+<tr>
+<td>getSuperClass()</td>
+<td style="text-align:left">Class对象</td>
+<td style="text-align:left">获得该类继承的类</td>
+</tr>
+<tr>
+<td>getInterface()</td>
+<td style="text-align:left">Class数组</td>
+<td style="text-align:left">获得该类实现的所有接口</td>
+</tr>
+<tr>
+<td>getConstructors()</td>
+<td style="text-align:left">Constructor数组</td>
+<td style="text-align:left">获得所有权限为public的构造方法</td>
+</tr>
+<tr>
+<td>getConstructor(Class&lt;?&gt;…types)</td>
+<td style="text-align:left">Constructor对象</td>
+<td style="text-align:left">获得权限为public的指定的构造方法</td>
+</tr>
+<tr>
+<td>getDeclaredConstructors()</td>
+<td style="text-align:left">Constructor数组</td>
+<td style="text-align:left">获得所有的构造方法，按声明顺序返回</td>
+</tr>
+<tr>
+<td>getDeclaredConstructor(Class&lt;?&gt;…types)</td>
+<td style="text-align:left">Constructor对象</td>
+<td style="text-align:left">获得指定的构造方法</td>
+</tr>
+<tr>
+<td>getMethods()</td>
+<td style="text-align:left">Method数组</td>
+<td style="text-align:left">获得所有权限为Public的方法</td>
+</tr>
+<tr>
+<td>getMethod(String name, Class&lt;?&gt;…types)</td>
+<td style="text-align:left">Method对象</td>
+<td style="text-align:left">获得权限为Public的指定的方法</td>
+</tr>
+<tr>
+<td>getDeclaredMethods()</td>
+<td style="text-align:left">Method数组</td>
+<td style="text-align:left">获得所有的方法,按声明顺序返回</td>
+</tr>
+<tr>
+<td>getDeclaredMethod(String name, Class&lt;?&gt;…types)</td>
+<td style="text-align:left">Method对象</td>
+<td style="text-align:left">获得指定的方法</td>
+</tr>
+<tr>
+<td>getFields()</td>
+<td style="text-align:left">Field数组</td>
+<td style="text-align:left">获得所有权限为Public的成员变量</td>
+</tr>
+<tr>
+<td>getField(String name)</td>
+<td style="text-align:left">Field对象</td>
+<td style="text-align:left">获得权限为Public的指定的成员变量</td>
+</tr>
+<tr>
+<td>getDeclaredFields()</td>
+<td style="text-align:left">Field数组</td>
+<td style="text-align:left">获得所有的成员变量</td>
+</tr>
+<tr>
+<td>getDeclaredField(String name)</td>
+<td style="text-align:left">Method对象</td>
+<td style="text-align:left">获得指定的成员变量</td>
+</tr>
+<tr>
+<td>getClasses()</td>
+<td style="text-align:left">Class数组</td>
+<td style="text-align:left">获得所有权限为public的内部类</td>
+</tr>
+<tr>
+<td>getDeclaredClasses()</td>
+<td style="text-align:left">Class数组</td>
+<td style="text-align:left">获得所有内部类</td>
+</tr>
+<tr>
+<td>getDeclaringClass()</td>
+<td style="text-align:left">Class对象</td>
+<td style="text-align:left">如果该类为内部类，则返回它的成员类，否则返回null</td>
+</tr>
+</tbody>
+</table>
+<p><strong>说明:getClasses()和getMethods()会包含父类中权限为public的成员变量和方法</strong></p>
+<p>获得Class的其他方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//第一种方式：  </span></div><div class="line">Class testc = Class.forName(<span class="string">"JTextField"</span>);  </div><div class="line"><span class="comment">//第二种方式：  </span></div><div class="line"><span class="comment">//java中每个类型都有class 属性.  </span></div><div class="line">Class testc = JTextField.class;</div></pre></td></tr></table></figure></p>
+<h2 id="java提供的反射类"><a href="#java提供的反射类" class="headerlink" title="java提供的反射类"></a>java提供的反射类</h2><p>java.lang.Class;<br>java.lang.reflect.Constructor; java.lang.reflect.Field;<br>java.lang.reflect.Method;<br>java.lang.reflect.Modifier;</p>
+<p>## </p>
 
       
     </div>
@@ -666,7 +776,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#class类"><span class="nav-number">1.</span> <span class="nav-text">class类</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#class类"><span class="nav-number">1.</span> <span class="nav-text">class类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java提供的反射类"><span class="nav-number">2.</span> <span class="nav-text">java提供的反射类</span></a></li></ol></div>
             
 
           </div>
