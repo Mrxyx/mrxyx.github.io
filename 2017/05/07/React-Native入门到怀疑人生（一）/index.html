@@ -592,6 +592,10 @@
           
   <div class="comments" id="comments">
     
+       
+         <div id="gitment-container"></div>
+       
+    
   </div>
 
 
@@ -915,6 +919,26 @@
 
 
 
+
+   
+   
+   
+   
+   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+   
+       <script type="text/javascript">
+           var gitment = new Gitment({
+              id: document.location.href, 
+               owner: '14539338',
+               repo: 'mrxyx.github.io',
+               oauth: {
+                   client_id: '64537346ad74915a60c7',
+                   client_secret: 'a969c1970c13b3d8472f95abc685538fdeae464b',
+               }});
+           gitment.render('gitment-container');
+       </script>
+   
 
   
 
