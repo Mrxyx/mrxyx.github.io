@@ -92,7 +92,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="内存,优化," />
+  <meta name="keywords" content="React Native,webApp," />
 
 
 
@@ -108,20 +108,17 @@
 
 
 
-<meta name="description" content="本章参考google官方文档，总结了android开发过程中内存优化的方法，同时，结合实际开发过程中遇到的OOM，总结了部分经验。不当之处，请随时提出。">
-<meta name="keywords" content="内存,优化">
+<meta name="description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章React Native入门到怀疑人生（五）最后提到会发出一个RN实战项目，终于历经上周末两天的辛勤劳作，和大家见面啦~话说欠下的债就像心头的刺，搞的我夜不能寐，其实真的是因为太忙（lan）啦👀">
+<meta name="keywords" content="React Native,webApp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android内存优化">
-<meta property="og:url" content="http://www.mrxyx.cn/2017/05/09/Android内存优化/index.html">
+<meta property="og:title" content="React Native项目--V2EX">
+<meta property="og:url" content="http://www.mrxyx.cn/2017/07/10/React-Native项目-V2EX/index.html">
 <meta property="og:site_name" content="知,行|Mrx">
-<meta property="og:description" content="本章参考google官方文档，总结了android开发过程中内存优化的方法，同时，结合实际开发过程中遇到的OOM，总结了部分经验。不当之处，请随时提出。">
-<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050901.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050902.png">
-<meta property="og:updated_time" content="2017-05-29T18:44:57.084Z">
+<meta property="og:description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章React Native入门到怀疑人生（五）最后提到会发出一个RN实战项目，终于历经上周末两天的辛勤劳作，和大家见面啦~话说欠下的债就像心头的刺，搞的我夜不能寐，其实真的是因为太忙（lan）啦👀">
+<meta property="og:updated_time" content="2017-07-10T04:36:19.821Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android内存优化">
-<meta name="twitter:description" content="本章参考google官方文档，总结了android开发过程中内存优化的方法，同时，结合实际开发过程中遇到的OOM，总结了部分经验。不当之处，请随时提出。">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050901.png">
+<meta name="twitter:title" content="React Native项目--V2EX">
+<meta name="twitter:description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章React Native入门到怀疑人生（五）最后提到会发出一个RN实战项目，终于历经上周末两天的辛勤劳作，和大家见面啦~话说欠下的债就像心头的刺，搞的我夜不能寐，其实真的是因为太忙（lan）啦👀">
 
 
 
@@ -149,13 +146,13 @@
 
 
 
-  <link rel="canonical" href="http://www.mrxyx.cn/2017/05/09/Android内存优化/"/>
+  <link rel="canonical" href="http://www.mrxyx.cn/2017/07/10/React-Native项目-V2EX/"/>
 
 
 
 
 
-  <title>Android内存优化 | 知,行|Mrx</title>
+  <title>React Native项目--V2EX | 知,行|Mrx</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -339,7 +336,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.mrxyx.cn/2017/05/09/Android内存优化/">
+    <link itemprop="mainEntityOfPage" href="http://www.mrxyx.cn/2017/07/10/React-Native项目-V2EX/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mrx">
@@ -356,7 +353,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Android内存优化</h2>
+          <h2 class="post-title" itemprop="name headline">React Native项目--V2EX</h2>
         
 
         <div class="post-meta">
@@ -368,8 +365,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-09T18:46:12+08:00">
-                2017-05-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-10T12:21:56+08:00">
+                2017-07-10
               </time>
             
 
@@ -391,8 +388,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
+                  <a href="/categories/React-Native/" itemprop="url" rel="index">
+                    <span itemprop="name">React Native</span>
                   </a>
                 </span>
 
@@ -430,52 +427,9 @@
       
 
       
-        <p>本章参考google官方文档，总结了android开发过程中内存优化的方法，同时，结合实际开发过程中遇到的OOM，总结了部分经验。不当之处，请随时提出。<br><a id="more"></a></p>
-<blockquote>
-<p>Random-access memory (RAM) is a valuable resource in any software development environment,<br>but it’s even more valuable on a mobile operating system where physical memory is often constrained.<br>Although both the Android Runtime (ART) and Dalvik virtual machine perform routine garbage collection,<br>this does not mean you can ignore when and where your app allocates and releases memory</p>
-</blockquote>
-<p>随机存取存储器（RAM）是任何软件开发环境中的宝贵资源，但在物理内存通常受限制的移动操作系统上更为有价值。<br>尽管Android Runtime（ART）和Dalvik虚拟机都执行常规垃圾收集，但这并不意味着您可以忽略应用程序分配和释放内存的时间和位置</p>
-<h2 id="查看内存使用情况"><a href="#查看内存使用情况" class="headerlink" title="查看内存使用情况"></a>查看内存使用情况</h2><ul>
-<li>1 使用android studio自带的 Memory Monitor查看<br>该工具显示可用和分配的Java内存随时间的图，包括垃圾回收事件</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050901.png" alt=""></p>
-<ul>
-<li>2 使用android studio自带的allocation Tracker tool</li>
-</ul>
-<p>分配跟踪器记录应用程序的内存分配，并列出分析快照中的所有已分配对象。您可以使用此工具来跟踪分配太多对象的部分代码</p>
-<p><img src="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017050902.png" alt=""></p>
-<h2 id="优化内存的方案"><a href="#优化内存的方案" class="headerlink" title="优化内存的方案"></a>优化内存的方案</h2><h4 id="1-使用onTrimMemory在应用UI隐藏时释放UI资源来释放内存"><a href="#1-使用onTrimMemory在应用UI隐藏时释放UI资源来释放内存" class="headerlink" title="1 使用onTrimMemory在应用UI隐藏时释放UI资源来释放内存"></a>1 使用onTrimMemory在应用UI隐藏时释放UI资源来释放内存</h4><p>请注意：这个玩意不同于onStop，你的应用仅仅会在所有UI组件的被隐藏的时候接收到onTrimMemory()的回调并带有参数TRIM_MEMORY_UI_HIDDEN。这与onStop()的回调是不同的，onStop会在activity的实例隐藏时会执行，</p>
-<p>例如当用户从你的app的某个activity跳转到另外一个activity时前面activity的onStop()会被执行。<br>因此你应该实现onStop回调，并且在此回调里面释放activity的资源，例如释放网络连接，注销监听广播接收者。除非接收到onTrimMemory(TRIM_MEMORY_UI_HIDDEN))的回调，否者你不应该释放你的UI资源。这确保了用户从其他activity切回来时，你的UI资源仍然可用，并且可以迅速恢复activity。</p>
- <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> android.content.ComponentCallbacks2;</div><div class="line"><span class="comment">// Other import statements ...</span></div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span></span></div><div class="line">    <span class="keyword">implements</span> <span class="title">ComponentCallbacks2</span> &#123;</div><div class="line"></div><div class="line">    <span class="comment">// Other activity code ...</span></div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * Release memory when the UI becomes hidden or when system resources become low.</div><div class="line">     * <span class="doctag">@param</span> level the memory-related event that was raised.</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onTrimMemory</span><span class="params">(<span class="keyword">int</span> level)</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="comment">// Determine which lifecycle or system event was raised.</span></div><div class="line">        <span class="keyword">switch</span> (level) &#123;</div><div class="line"></div><div class="line">            <span class="keyword">case</span> ComponentCallbacks2.TRIM_MEMORY_UI_HIDDEN:</div><div class="line"></div><div class="line">                <span class="comment">/*</span></div><div class="line">                   Release any UI objects that currently hold memory.</div><div class="line"></div><div class="line">                   The user interface has moved to the background.</div><div class="line">                */</div><div class="line"></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">	    <span class="comment">//你的app正在运行并且不会被列为可杀死的。但是设备此时正运行于低内存状态下，系统开始触发杀死LRU Cache中的Process的机制</span></div><div class="line">            <span class="keyword">case</span> ComponentCallbacks2.TRIM_MEMORY_RUNNING_MODERATE:	</div><div class="line"></div><div class="line">		<span class="keyword">break</span>;</div><div class="line">	    <span class="comment">//你的app正在运行且没有被列为可杀死的。但是设备正运行于更低内存的状态下，你应该释放不用的资源用来提升系统性能（但是这也会直接影响到你的app的性能）。</span></div><div class="line">            <span class="keyword">case</span> ComponentCallbacks2.TRIM_MEMORY_RUNNING_LOW:</div><div class="line"></div><div class="line">		<span class="keyword">break</span>;</div><div class="line">	    <span class="comment">//你的app仍在运行，但是系统已经把LRU Cache中的大多数进程都已经杀死，因此你应该立即释放所有非必须的资源。如果系统不能回收到足够的RAM数量，</span></div><div class="line">		<span class="comment">//系统将会清除所有的LRU缓存中的进程，并且开始杀死那些之前被认为不应该杀死的进程，例如那个包含了一个运行态Service的进程。</span></div><div class="line">            <span class="keyword">case</span> ComponentCallbacks2.TRIM_MEMORY_RUNNING_CRITICAL:</div><div class="line"></div><div class="line">                <span class="comment">/*</span></div><div class="line">                   Release any memory that your app doesn't need to run.</div><div class="line"></div><div class="line">                   The device is running low on memory while the app is running.</div><div class="line">                   The event raised indicates the severity of the memory-related event.</div><div class="line">                   If the event is TRIM_MEMORY_RUNNING_CRITICAL, then the system will</div><div class="line">                   begin killing background processes.</div><div class="line">                */</div><div class="line"></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">	    <span class="comment">//系统正运行于低内存状态并且你的进程正处于LRU缓存名单中最不容易杀掉的位置。尽管你的app进程并不 是处于被杀掉的高危险状态，</span></div><div class="line">	    <span class="comment">//系统可能已经开始杀掉LRU缓存中的其他进程了。你应该释放那些容易恢复的资源，以便于你的进程可以保留下来，这样当用户回退到你的app的时候才能够迅速恢复。</span></div><div class="line">            <span class="keyword">case</span> ComponentCallbacks2.TRIM_MEMORY_BACKGROUND:</div><div class="line"></div><div class="line">		<span class="keyword">break</span>;</div><div class="line">	    <span class="comment">//系统正运行于低内存状态并且你的进程已经已经接近LRU名单的中部位置。如果系统开始变得更加内存紧张，你的进程是有可能被杀死的</span></div><div class="line">            <span class="keyword">case</span> ComponentCallbacks2.TRIM_MEMORY_MODERATE:</div><div class="line"></div><div class="line">		<span class="keyword">break</span>;</div><div class="line">	    <span class="comment">//系统正运行与低内存的状态并且你的进程正处于LRU名单中最容易被杀掉的位置。你应该释放任何不影响你的app恢复状态的资源</span></div><div class="line">            <span class="keyword">case</span> ComponentCallbacks2.TRIM_MEMORY_COMPLETE:</div><div class="line"></div><div class="line">                <span class="comment">/*</span></div><div class="line">                   Release as much memory as the process can.</div><div class="line"></div><div class="line">                   The app is on the LRU list and the system is running low on memory.</div><div class="line">                   The event raised indicates where the app sits within the LRU list.</div><div class="line">                   If the event is TRIM_MEMORY_COMPLETE, the process will be one of</div><div class="line">                   the first to be terminated.</div><div class="line">                */</div><div class="line"></div><div class="line">                <span class="keyword">break</span>;</div><div class="line"></div><div class="line">            <span class="keyword">default</span>:</div><div class="line">                <span class="comment">/*</span></div><div class="line">                  Release any non-critical data structures.</div><div class="line"></div><div class="line">                  The app received an unrecognized memory level value</div><div class="line">                  from the system. Treat this as a generic low-memory message.</div><div class="line">                */</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>这个回调支持API14以上，要兼容14以下可以使用 onLowMemory()</p>
-</blockquote>
-<h4 id="2-谨慎使用services-可以选择intentservice-代替service"><a href="#2-谨慎使用services-可以选择intentservice-代替service" class="headerlink" title="2 谨慎使用services,可以选择intentservice 代替service"></a>2 谨慎使用services,可以选择intentservice 代替service</h4><p> 它会在处理完交代给它的intent任务之后尽快结束自己</p>
-<h4 id="3-使用ArrayMap-SparseArray代替hashmap等传统数据结构"><a href="#3-使用ArrayMap-SparseArray代替hashmap等传统数据结构" class="headerlink" title="3 使用ArrayMap/SparseArray代替hashmap等传统数据结构"></a>3 使用ArrayMap/SparseArray代替hashmap等传统数据结构</h4><h4 id="4-注意代码抽象，少用enum"><a href="#4-注意代码抽象，少用enum" class="headerlink" title="4 注意代码抽象，少用enum"></a>4 注意代码抽象，少用enum</h4><p>抽象的代价是巨大的：一般来说，它们需要更多的代码需要执行，需要更多的时间和更多的RAM才能将该代码映射到内存中</p>
-<blockquote>
-<p>For example, enums often require more than twice as much memory as static constants. You should strictly avoid using enums on Android</p>
-</blockquote>
-<h4 id="5-谨慎使用第三方库，移除内存使用大的库和资源文件"><a href="#5-谨慎使用第三方库，移除内存使用大的库和资源文件" class="headerlink" title="5 谨慎使用第三方库，移除内存使用大的库和资源文件"></a>5 谨慎使用第三方库，移除内存使用大的库和资源文件</h4><p> 你的代码中的一些资源和库可以在不知道的情况下消除内存。<br> 您的APK的总体尺寸（包括第三方库或嵌入式资源）可能会影响应用程序消耗多少内存。<br> 您可以通过从代码中删除任何冗余的，不必要的或膨胀的组件，资源或库来提高应用程序的内存消耗</p>
-<h4 id="6-减小APk大小"><a href="#6-减小APk大小" class="headerlink" title="6 减小APk大小"></a>6 减小APk大小</h4><p> 您可以通过减少应用程序的总体大小来显着降低应用程序的内存使用量。<br> 位图大小，资源，动画框架和第三方库都可以帮助您的APK的大小。<br> Android Studio和Android SDK提供多种工具来帮助您减少资源和外部依赖关系的大小<br> example <a href="https://developer.android.google.cn/topic/performance/reduce-apk-size.html" target="_blank" rel="external">Reduce APK Size</a></p>
-<h4 id="7-如果项目必须需要用到依赖注入框架，推荐使用Dragger2-官方推荐"><a href="#7-如果项目必须需要用到依赖注入框架，推荐使用Dragger2-官方推荐" class="headerlink" title="7 如果项目必须需要用到依赖注入框架，推荐使用Dragger2(官方推荐)"></a>7 如果项目必须需要用到依赖注入框架，推荐使用<a href="https://google.github.io/dagger/" target="_blank" rel="external">Dragger2</a>(官方推荐)</h4><p> Dagger不使用反射来扫描您的应用程序的代码。 Dagger的静态编译时实现意味着它可以在Android应用程序中使用，而无需运行时费用或内存使用。</p>
-<h4 id="8-使用LeakCanary开源控件，可以很好的帮助我们发现内存泄露的情况"><a href="#8-使用LeakCanary开源控件，可以很好的帮助我们发现内存泄露的情况" class="headerlink" title="8 使用LeakCanary开源控件，可以很好的帮助我们发现内存泄露的情况"></a>8 使用LeakCanary开源控件，可以很好的帮助我们发现内存泄露的情况</h4><p> 具体的使用请查看<a href="https://github.com/square/leakcanary" target="_blank" rel="external">官方Github</a>或者<a href="https://www.liaohuqiu.net/cn/posts/leak-canary-read-me/" target="_blank" rel="external">中文资料</a><br> 当然还可以使用MAT</p>
-<p> 以上参考自<a href="https://developer.android.google.cn/topic/performance/memory.html" target="_blank" rel="external">android官方性能优化资料</a></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li><p>LeakCanary值得推荐，用于监听项目中的内存泄露。<br>监听会发现除了官方SDK中的方法导致的内存泄露外，大部分都是静态变量的引用未及时销毁导致的。</p>
-</li>
-<li><p>加载大图，及易产生OOM。<br>因此在加载图片的时候，需要我们对图片进行压缩处理（图片的大小，质量压缩），选择合适尺寸的图片进行加载。同时，需要及时recycle临时图片。</p>
-</li>
-<li><p>减少不必要的全局变量（官方文档给出了同样的建议），避免静态变量引用消耗更多的资源。</p>
-</li>
-<li><p>减少枚举类型的使用。</p>
-</li>
-<li><p>在使用SQLite时及时销毁cursor。</p>
-</li>
-</ul>
-<p>以上为项目中遇到的内存优化方案，其他方案若有遗漏会及时补充。</p>
-<p>插一句：虽然现在手机内存慢慢在变大，必要的时候，我们可以使用空间换时间，但是在自己能力范围内，不断的优化内存使用，应该算是我们的职业道德吧👍。</p>
-<p>虽然我现在是渣渣，但是五年后呢？嘻嘻</p>
-
+        <p>欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章<a href="/2017/05/22/React-Native入门到怀疑人生（五）/" title="React Native入门到怀疑人生（五）">React Native入门到怀疑人生（五）</a>最后提到会发出一个RN实战项目，终于历经上周末两天的辛勤劳作，和大家见面啦~话说欠下的债就像心头的刺，搞的我夜不能寐，其实真的是因为太忙（lan）啦👀<br><a id="more"></a></p>
+<h2 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h2><p> <strong><a href="https://github.com/Mrxyx/V2ex" target="_blank" rel="external">https://github.com/Mrxyx/V2ex</a></strong><br>后续会持续更新，这次是认真的，欢迎大家start，若有问题请提出大家宝贵的issue</p>
+<h2 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h2><h2 id="开发遇到的问题及使用的技术"><a href="#开发遇到的问题及使用的技术" class="headerlink" title="开发遇到的问题及使用的技术"></a>开发遇到的问题及使用的技术</h2><h2 id="项目下载"><a href="#项目下载" class="headerlink" title="项目下载"></a>项目下载</h2><h2 id="TODO-list"><a href="#TODO-list" class="headerlink" title="TODO list"></a>TODO list</h2>
       
     </div>
 
@@ -525,9 +479,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/内存/" rel="tag"># 内存</a>
+            <a href="/tags/React-Native/" rel="tag"># React Native</a>
           
-            <a href="/tags/优化/" rel="tag"># 优化</a>
+            <a href="/tags/webApp/" rel="tag"># webApp</a>
           
         </div>
       
@@ -540,18 +494,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/09/React-Native入门到怀疑人生（三）/" rel="next" title="React Native入门到怀疑人生（三）">
-                <i class="fa fa-chevron-left"></i> React Native入门到怀疑人生（三）
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/08/React-Native入门到怀疑人生（二）/" rel="prev" title="React Native入门到怀疑人生（二）">
-                React Native入门到怀疑人生（二） <i class="fa fa-chevron-right"></i>
+              <a href="/2017/06/23/工作学习之余/" rel="prev" title="工作学习之余">
+                工作学习之余 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -714,7 +664,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看内存使用情况"><span class="nav-number">1.</span> <span class="nav-text">查看内存使用情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优化内存的方案"><span class="nav-number">2.</span> <span class="nav-text">优化内存的方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-使用onTrimMemory在应用UI隐藏时释放UI资源来释放内存"><span class="nav-number">2.0.1.</span> <span class="nav-text">1 使用onTrimMemory在应用UI隐藏时释放UI资源来释放内存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-谨慎使用services-可以选择intentservice-代替service"><span class="nav-number">2.0.2.</span> <span class="nav-text">2 谨慎使用services,可以选择intentservice 代替service</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-使用ArrayMap-SparseArray代替hashmap等传统数据结构"><span class="nav-number">2.0.3.</span> <span class="nav-text">3 使用ArrayMap/SparseArray代替hashmap等传统数据结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-注意代码抽象，少用enum"><span class="nav-number">2.0.4.</span> <span class="nav-text">4 注意代码抽象，少用enum</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-谨慎使用第三方库，移除内存使用大的库和资源文件"><span class="nav-number">2.0.5.</span> <span class="nav-text">5 谨慎使用第三方库，移除内存使用大的库和资源文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-减小APk大小"><span class="nav-number">2.0.6.</span> <span class="nav-text">6 减小APk大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-如果项目必须需要用到依赖注入框架，推荐使用Dragger2-官方推荐"><span class="nav-number">2.0.7.</span> <span class="nav-text">7 如果项目必须需要用到依赖注入框架，推荐使用Dragger2(官方推荐)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-使用LeakCanary开源控件，可以很好的帮助我们发现内存泄露的情况"><span class="nav-number">2.0.8.</span> <span class="nav-text">8 使用LeakCanary开源控件，可以很好的帮助我们发现内存泄露的情况</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目地址"><span class="nav-number">1.</span> <span class="nav-text">项目地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目介绍"><span class="nav-number">2.</span> <span class="nav-text">项目介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发遇到的问题及使用的技术"><span class="nav-number">3.</span> <span class="nav-text">开发遇到的问题及使用的技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目下载"><span class="nav-number">4.</span> <span class="nav-text">项目下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TODO-list"><span class="nav-number">5.</span> <span class="nav-text">TODO list</span></a></li></ol></div>
             
 
           </div>
