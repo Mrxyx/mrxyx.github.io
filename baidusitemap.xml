@@ -3,6 +3,48 @@
 
 
     
+  <url>
+    <loc>http://www.mrxyx.cn/2017/08/29/Windows%E4%B8%8B%E4%BD%BF%E7%94%A8Gitblit%E6%90%AD%E5%BB%BAGit%E6%9C%8D%E5%8A%A1%E5%99%A8-0/</loc>
+    <lastmod>2017-08-29T14:33:21.180Z</lastmod>
+    <data>
+        <display>
+        <title>Windows下使用Gitblit搭建Git服务器</title>
+        <pubTime>2017-08-29T12:32:32.000Z</pubTime>
+        
+        <tag>Gitblit</tag>
+         
+        <tag>Git</tag>
+         
+         
+           
+             
+              <breadCrumb title="Git" url="http://www.mrxyx.cn/categories/Git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.mrxyx.cn/2017/08/13/%E5%B9%B4%E4%B8%AD%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2017-08-29T12:09:25.307Z</lastmod>
+    <data>
+        <display>
+        <title>年中总结</title>
+        <pubTime>2017-08-13T13:56:11.000Z</pubTime>
+        
+        <tag>总结</tag>
+         
+         
+           
+             
+              <breadCrumb title="总结" url="http://www.mrxyx.cn/categories/%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://www.mrxyx.cn/2017/06/23/%E5%B7%A5%E4%BD%9C%E5%AD%A6%E4%B9%A0%E4%B9%8B%E4%BD%99/</loc>
@@ -18,26 +60,6 @@
            
              
               <breadCrumb title="动漫" url="http://www.mrxyx.cn/categories/%E5%8A%A8%E6%BC%AB/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.mrxyx.cn/2017/08/13/%E5%B9%B4%E4%B8%AD%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2017-08-13T15:10:14.776Z</lastmod>
-    <data>
-        <display>
-        <title>年中总结</title>
-        <pubTime>2017-08-13T13:56:11.000Z</pubTime>
-        
-        <tag>总结</tag>
-         
-         
-           
-             
-              <breadCrumb title="总结" url="http://www.mrxyx.cn/categories/%E6%80%BB%E7%BB%93/"/>
           
         </display>
     </data>
