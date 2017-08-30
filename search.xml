@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Android AOP编程]]></title>
+    <url>%2F2017%2F08%2F29%2FAndroid-AOP%E7%BC%96%E7%A8%8B%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[Windows下使用Gitblit搭建Git服务器]]></title>
     <url>%2F2017%2F08%2F29%2FWindows%E4%B8%8B%E4%BD%BF%E7%94%A8Gitblit%E6%90%AD%E5%BB%BAGit%E6%9C%8D%E5%8A%A1%E5%99%A8-0%2F</url>
     <content type="text"><![CDATA[Long Time No Write！最近在折腾Git，昨天在自己本地D盘建了个Git库，用于E盘Demo的版本管理。顺便总结下本地搭建Git服务器的过程。搭建选用的是Gitblit版本管理库。 环境环境：win10前提： 1已搭建好Java环境，并配置好环境变量，未搭建点这里 2已安装Git ps 既然你需要搭建Git服务端，假设你已经安装Git 未安装请点这里工具：GitBlit点我下载 搭建创建服务端存储资料的文件夹可任意选择文件夹，下面步骤会用到当前文件夹路径，请记录 下载Gitblit下载链接：http://www.gitblit.com/ 解压到任意目录无需安装，可安装在任意目录 修改配置文件修改/data/defaults.properties文件文件位于解压目录下的data/defaults.properties，使用“记事本打开” 修改文件下的git.repositoriesFolder=将路径修改为2.1中创建的文件夹路径 修改文件下的server.httpPort=设定Http协议的端口号，可设置为8080,若冲突可修改端口 修改文件下的server.httpBindInterface=设定服务器的IP地址，这里设置为当前电脑的IP地址，下图设置为localhost，因我需要本地访问 修改文件下的server.httpsBindInterface=设定Https协议的IP地址，这里设置为当前电脑的IP地址修改完成保存关闭 运行gitblit.cmd批处理文件批处理文件位于在解压的文件夹下，如图 点击运行后在浏览器中输入Http地址+端口号或者Https地址+端口号，若配置正确可进入gitblit管理界面如下图 可将Gitblit服务加入Window Service若不想每次启动gitblit服务都要通过2.3,则可将Gitblit服务加入Window Service，步骤如下 在Gitblit目录下，找到installService.cmd文件，使用“记事本打开” 修改配置 修改ARCH 32位系统：SET ARCH=x86 64位系统：SET ARCH=amd64 添加 CD 为程序目录 SET CD=D:\Git\Gitblit-1.6.0(你的实际目录) 修改StartParams里的启动参数，给空就可以了如下图 双击Gitblit目录下的installService.cmd文件(以管理员身份运行)。启动Gitblit。服务器的服务管理下，就能看到已经存在的gitblit服务了。]]></content>
