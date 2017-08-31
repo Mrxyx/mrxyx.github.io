@@ -101,7 +101,7 @@
 <meta property="og:url" content="http://www.mrxyx.cn/2017/08/30/AspectJ-in-Android/index.html">
 <meta property="og:site_name" content="知,行|Mrx">
 <meta property="og:description" content="埋点？缓存？性能调试？简化繁琐的重复代码？如果你被这类问题困扰，那么本篇文章有可能为你提供一些帮助。">
-<meta property="og:updated_time" content="2017-08-31T13:52:48.014Z">
+<meta property="og:updated_time" content="2017-08-31T15:03:43.754Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AspectJ in Android">
 <meta name="twitter:description" content="埋点？缓存？性能调试？简化繁琐的重复代码？如果你被这类问题困扰，那么本篇文章有可能为你提供一些帮助。">
@@ -425,8 +425,11 @@
 <p>AOP为Aspect Oriented Programming的缩写，意为：面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。 </p>
 </blockquote>
 <p>大家熟知的OOP面向对象编程，是针对业务处理过程的实体及其属性和行为进行抽象封装。即把问题拆分到模块。<br>而AOP则是针对业务处理过程中的切面进行提取，它所面对的是处理过程中的某个步骤或阶段，以获得逻辑过程中各部分之间低耦合性的隔离效果。通俗讲就是把涉及到众多模块的某一类问题进行统一管理。</p>
-<h2 id="AOP在Android中有哪些实现方式"><a href="#AOP在Android中有哪些实现方式" class="headerlink" title="AOP在Android中有哪些实现方式"></a>AOP在Android中有哪些实现方式</h2><p>Android中AOP实现方式大致分为三类：APT,AspectJ,Javassist</p>
-<h2 id="AspectJ在Android中的使用"><a href="#AspectJ在Android中的使用" class="headerlink" title="AspectJ在Android中的使用"></a>AspectJ在Android中的使用</h2>
+<h2 id="AOP在Android中有哪些实现方式"><a href="#AOP在Android中有哪些实现方式" class="headerlink" title="AOP在Android中有哪些实现方式"></a>AOP在Android中有哪些实现方式</h2><p>Android中AOP实现方式大致分为三类：APT，AspectJ，Javassist</p>
+<h3 id="APT"><a href="#APT" class="headerlink" title="APT"></a>APT</h3><p>代表框架：<a href="https://github.com/JakeWharton/butterknife" target="_blank" rel="external">Butterknife</a>、<a href="https://google.github.io/dagger//users-guide" target="_blank" rel="external">Dagger2</a>等<br>APT设计内容较多，本篇不做陈述。<br>需要了解可参考本博客的<a href="/2017/06/09/ButterKnife使用及源码学习/" title="Butterknife使用及源码学习">Butterknife使用及源码学习</a>或<a href="https://race604.com/annotation-processing/" target="_blank" rel="external">Jlog`s Java注解处理器</a></p>
+<h3 id="AspectJ"><a href="#AspectJ" class="headerlink" title="AspectJ"></a>AspectJ</h3><p>代表框架：<a href="https://github.com/HujiangTechnology/gradle_plugin_android_aspectjx" target="_blank" rel="external">AspectJX</a>、<a href="https://github.com/JakeWharton/hugo" target="_blank" rel="external">Hugo</a>、<a href="https://github.com/uPhyca/gradle-android-aspectj-plugin" target="_blank" rel="external">gradle-android-aspectj-plugin</a>、<a href="https://github.com/north2016/T-MVP" target="_blank" rel="external">T-MVP</a></p>
+<h2 id="AspectJ在Android中的使用"><a href="#AspectJ在Android中的使用" class="headerlink" title="AspectJ在Android中的使用"></a>AspectJ在Android中的使用</h2><p>//Todo</p>
+
       
     </div>
 
@@ -663,7 +666,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是AOP"><span class="nav-number">2.</span> <span class="nav-text">什么是AOP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOP在Android中有哪些实现方式"><span class="nav-number">3.</span> <span class="nav-text">AOP在Android中有哪些实现方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AspectJ在Android中的使用"><span class="nav-number">4.</span> <span class="nav-text">AspectJ在Android中的使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是AOP"><span class="nav-number">2.</span> <span class="nav-text">什么是AOP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOP在Android中有哪些实现方式"><span class="nav-number">3.</span> <span class="nav-text">AOP在Android中有哪些实现方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#APT"><span class="nav-number">3.1.</span> <span class="nav-text">APT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AspectJ"><span class="nav-number">3.2.</span> <span class="nav-text">AspectJ</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AspectJ在Android中的使用"><span class="nav-number">4.</span> <span class="nav-text">AspectJ在Android中的使用</span></a></li></ol></div>
             
 
           </div>

@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://www.mrxyx.cn/2017/08/30/AspectJ-in-Android/</loc>
-    <lastmod>2017-08-31T13:52:48.014Z</lastmod>
+    <lastmod>2017-08-31T15:03:43.754Z</lastmod>
     <data>
         <display>
         <title>AspectJ in Android</title>
@@ -16,6 +16,28 @@
         <tag>aop</tag>
          
         <tag>aspectj</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://www.mrxyx.cn/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.mrxyx.cn/2017/06/05/Android%E5%BC%80%E5%8F%91%E6%8A%80%E8%83%BD%E5%AF%BC%E5%9B%BE/</loc>
+    <lastmod>2017-08-31T14:55:00.610Z</lastmod>
+    <data>
+        <display>
+        <title>Android开发技能导图</title>
+        <pubTime>2017-06-05T11:27:03.000Z</pubTime>
+        
+        <tag>android</tag>
+         
+        <tag>android技能</tag>
          
          
            
@@ -191,28 +213,6 @@
            
              
               <breadCrumb title="Java" url="http://www.mrxyx.cn/categories/Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.mrxyx.cn/2017/06/05/Android%E5%BC%80%E5%8F%91%E6%8A%80%E8%83%BD%E5%AF%BC%E5%9B%BE/</loc>
-    <lastmod>2017-06-06T13:14:38.131Z</lastmod>
-    <data>
-        <display>
-        <title>Android开发技能导图</title>
-        <pubTime>2017-06-05T11:27:03.000Z</pubTime>
-        
-        <tag>android</tag>
-         
-        <tag>android技能</tag>
-         
-         
-           
-             
-              <breadCrumb title="Android" url="http://www.mrxyx.cn/categories/Android/"/>
           
         </display>
     </data>
