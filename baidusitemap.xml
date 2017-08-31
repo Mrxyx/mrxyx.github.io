@@ -5,19 +5,27 @@
     
   <url>
     <loc>http://www.mrxyx.cn/2017/08/30/AspectJ-in-Android/</loc>
-    <lastmod>2017-08-30T14:14:21.985Z</lastmod>
+    <lastmod>2017-08-31T13:52:48.014Z</lastmod>
     <data>
         <display>
         <title>AspectJ in Android</title>
         <pubTime>2017-08-30T14:14:21.000Z</pubTime>
         
+        <tag>android</tag>
+         
+        <tag>aop</tag>
+         
+        <tag>aspectj</tag>
+         
          
            
+             
+              <breadCrumb title="Android" url="http://www.mrxyx.cn/categories/Android/"/>
+          
         </display>
     </data>
     </url>
 
-    
     
   <url>
     <loc>http://www.mrxyx.cn/2017/08/29/Windows%E4%B8%8B%E4%BD%BF%E7%94%A8Gitblit%E6%90%AD%E5%BB%BAGit%E6%9C%8D%E5%8A%A1%E5%99%A8-0/</loc>

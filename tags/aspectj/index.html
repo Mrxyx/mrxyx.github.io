@@ -80,7 +80,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="android,aop,aspectj," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -94,17 +94,15 @@
 
 
 
-<meta name="description" content="埋点？缓存？性能调试？简化繁琐的重复代码？如果你被这类问题困扰，那么本篇文章有可能为你提供一些帮助。">
-<meta name="keywords" content="android,aop,aspectj">
-<meta property="og:type" content="article">
-<meta property="og:title" content="AspectJ in Android">
-<meta property="og:url" content="http://www.mrxyx.cn/2017/08/30/AspectJ-in-Android/index.html">
+<meta name="description" content="Mrx">
+<meta property="og:type" content="website">
+<meta property="og:title" content="知,行|Mrx">
+<meta property="og:url" content="http://www.mrxyx.cn/tags/aspectj/index.html">
 <meta property="og:site_name" content="知,行|Mrx">
-<meta property="og:description" content="埋点？缓存？性能调试？简化繁琐的重复代码？如果你被这类问题困扰，那么本篇文章有可能为你提供一些帮助。">
-<meta property="og:updated_time" content="2017-08-31T13:52:48.014Z">
+<meta property="og:description" content="Mrx">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AspectJ in Android">
-<meta name="twitter:description" content="埋点？缓存？性能调试？简化繁琐的重复代码？如果你被这类问题困扰，那么本篇文章有可能为你提供一些帮助。">
+<meta name="twitter:title" content="知,行|Mrx">
+<meta name="twitter:description" content="Mrx">
 
 
 
@@ -132,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://www.mrxyx.cn/2017/08/30/AspectJ-in-Android/"/>
+  <link rel="canonical" href="http://www.mrxyx.cn/tags/aspectj/"/>
 
 
 
 
 
-  <title>AspectJ in Android | 知,行|Mrx</title>
+  <title>标签: aspectj | 知,行|Mrx</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -174,7 +172,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -302,212 +300,44 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.mrxyx.cn/2017/08/30/AspectJ-in-Android/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Mrx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="知,行|Mrx">
-    </span>
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h2>aspectj<small>标签</small>
+      </h2>
+    </div>
 
     
-      <header class="post-header">
+      
 
-        
-        
-          <h2 class="post-title" itemprop="name headline">AspectJ in Android</h2>
-        
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2017/08/30/AspectJ-in-Android/" itemprop="url">
               
-                <span class="post-meta-item-text">发表于</span>
+                <span itemprop="name">AspectJ in Android</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-30T22:14:21+08:00">
-                2017-08-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android/" itemprop="url" rel="index">
-                    <span itemprop="name">Android</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv">本文总阅读量
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
-            </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>埋点？缓存？性能调试？简化繁琐的重复代码？如果你被这类问题困扰，那么本篇文章有可能为你提供一些帮助。<br><a id="more"></a></p>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在项目开发过程中，经常会遇到下述问题</p>
-<ul>
-<li>需要对App的某些业务进行埋点（eg.记录某类业务的点击次数等），这个时候你如何处理呢？抽取公共方法在需要记录的页面中，加入此方法？这样的处理完全可以，但是如果你的页面超级多，需要埋点的业务也超级多，这样实现岂不是很不优雅？</li>
-<li>进行页面跳转或者按钮点击的时候，需要请求数据，产品要求若用户处于无网络状况下，需要提示用户。如何处理呢？抽取公共方法，在发起网络请求的时候调用此方法判断？这样的处理也是完全可以的。但是，有没有更加优雅的实现方法呢？</li>
-<li>（需要在多处代码中加入重复逻辑的问题* *）</li>
-</ul>
-<p>如何优雅的解决上述问题呢?<br>如果能编译时期或运行期在需要加入逻辑的地方，动态生成我们的预制代码，不就能解决问题吗？<br>对，其实就是使用AOP（Aspect-Oriented Programming）面向切面编程。 </p>
-<h2 id="什么是AOP"><a href="#什么是AOP" class="headerlink" title="什么是AOP"></a>什么是AOP</h2><blockquote>
-<p>AOP为Aspect Oriented Programming的缩写，意为：面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。 </p>
-</blockquote>
-<p>大家熟知的OOP面向对象编程，是针对业务处理过程的实体及其属性和行为进行抽象封装。即把问题拆分到模块。<br>而AOP则是针对业务处理过程中的切面进行提取，它所面对的是处理过程中的某个步骤或阶段，以获得逻辑过程中各部分之间低耦合性的隔离效果。通俗讲就是把涉及到众多模块的某一类问题进行统一管理。</p>
-<h2 id="AOP在Android中有哪些实现方式"><a href="#AOP在Android中有哪些实现方式" class="headerlink" title="AOP在Android中有哪些实现方式"></a>AOP在Android中有哪些实现方式</h2><p>Android中AOP实现方式大致分为三类：APT,AspectJ,Javassist</p>
-<h2 id="AspectJ在Android中的使用"><a href="#AspectJ在Android中的使用" class="headerlink" title="AspectJ在Android中的使用"></a>AspectJ在Android中的使用</h2>
-      
-    </div>
-
-    <div>
-      
+            </a>
         
+      </h3>
 
-      
-    </div>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-08-30T22:14:21+08:00"
+              content="2017-08-30" >
+          08-30
+        </time>
+      </div>
 
-    <div>
-      
-        
-  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
-    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-      <span>赏</span>
-    </button>
-    <div id="QR" style="display: none;">
-      
-        <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/uploads/wechatpay.jpg" alt="Mrx WeChat Pay"/>
-          <p>微信打赏</p>
-        </div>
-      
-      
-        <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/uploads/alipay.jpg" alt="Mrx Alipay"/>
-          <p>支付宝打赏</p>
-        </div>
-      
-    </div>
-  </div>
-
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/android/" rel="tag"># android</a>
-          
-            <a href="/tags/aop/" rel="tag"># aop</a>
-          
-            <a href="/tags/aspectj/" rel="tag"># aspectj</a>
-          
-        </div>
-      
-
-      
-        
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/29/Windows下使用Gitblit搭建Git服务器-0/" rel="prev" title="Windows下使用Gitblit搭建Git服务器">
-                Windows下使用Gitblit搭建Git服务器 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
-      
-    </div>
+    
   </div>
+
+  
 
 
           </div>
@@ -515,14 +345,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-       
-         <div id="gitment-container"></div>
-       
-    
-  </div>
-
 
         </div>
         
@@ -542,17 +364,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -643,22 +456,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是AOP"><span class="nav-number">2.</span> <span class="nav-text">什么是AOP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOP在Android中有哪些实现方式"><span class="nav-number">3.</span> <span class="nav-text">AOP在Android中有哪些实现方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AspectJ在Android中的使用"><span class="nav-number">4.</span> <span class="nav-text">AspectJ在Android中的使用</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -792,10 +589,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
-
-
 
   
 

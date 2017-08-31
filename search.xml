@@ -3,7 +3,15 @@
   <entry>
     <title><![CDATA[AspectJ in Android]]></title>
     <url>%2F2017%2F08%2F30%2FAspectJ-in-Android%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[埋点？缓存？性能调试？简化繁琐的重复代码？如果你被这类问题困扰，那么本篇文章有可能为你提供一些帮助。 问题在项目开发过程中，经常会遇到下述问题 需要对App的某些业务进行埋点（eg.记录某类业务的点击次数等），这个时候你如何处理呢？抽取公共方法在需要记录的页面中，加入此方法？这样的处理完全可以，但是如果你的页面超级多，需要埋点的业务也超级多，这样实现岂不是很不优雅？ 进行页面跳转或者按钮点击的时候，需要请求数据，产品要求若用户处于无网络状况下，需要提示用户。如何处理呢？抽取公共方法，在发起网络请求的时候调用此方法判断？这样的处理也是完全可以的。但是，有没有更加优雅的实现方法呢？ （需要在多处代码中加入重复逻辑的问题* *） 如何优雅的解决上述问题呢?如果能编译时期或运行期在需要加入逻辑的地方，动态生成我们的预制代码，不就能解决问题吗？对，其实就是使用AOP（Aspect-Oriented Programming）面向切面编程。 什么是AOP AOP为Aspect Oriented Programming的缩写，意为：面向切面编程，通过预编译方式和运行期动态代理实现程序功能的统一维护的一种技术。 大家熟知的OOP面向对象编程，是针对业务处理过程的实体及其属性和行为进行抽象封装。即把问题拆分到模块。而AOP则是针对业务处理过程中的切面进行提取，它所面对的是处理过程中的某个步骤或阶段，以获得逻辑过程中各部分之间低耦合性的隔离效果。通俗讲就是把涉及到众多模块的某一类问题进行统一管理。 AOP在Android中有哪些实现方式Android中AOP实现方式大致分为三类：APT,AspectJ,Javassist AspectJ在Android中的使用]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>android</tag>
+        <tag>aop</tag>
+        <tag>aspectj</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Windows下使用Gitblit搭建Git服务器]]></title>
