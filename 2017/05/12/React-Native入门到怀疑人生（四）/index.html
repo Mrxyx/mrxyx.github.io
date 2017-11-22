@@ -94,22 +94,22 @@
 
 
 
-<meta name="description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章React Native入门到怀疑人生（三）我们已经讲解了RN的props属性，state状态，样式相关知识，那么本章节将讲解RN的flexbox布局，控件宽高相关知识。本章将使用ES6语法。文章不当之处，希望大家不吝赐教，多谢！">
+<meta name="description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章React Native入门到怀疑人生（三）我们已经讲解了RN的props属性，state状态，样式相关知识，那么本章节将讲解RN的flexbox布局，控件宽高相关知识。本章将使用ES6语法。文章不当之处，希望大家及时指出，多谢！">
 <meta name="keywords" content="React Native,webApp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React Native入门到怀疑人生（四）">
 <meta property="og:url" content="http://www.mrxyx.cn/2017/05/12/React-Native入门到怀疑人生（四）/index.html">
 <meta property="og:site_name" content="知,行|Mrx">
-<meta property="og:description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章React Native入门到怀疑人生（三）我们已经讲解了RN的props属性，state状态，样式相关知识，那么本章节将讲解RN的flexbox布局，控件宽高相关知识。本章将使用ES6语法。文章不当之处，希望大家不吝赐教，多谢！">
+<meta property="og:description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章React Native入门到怀疑人生（三）我们已经讲解了RN的props属性，state状态，样式相关知识，那么本章节将讲解RN的flexbox布局，控件宽高相关知识。本章将使用ES6语法。文章不当之处，希望大家及时指出，多谢！">
 <meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051501.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051502.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051503.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051504.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051505.png">
-<meta property="og:updated_time" content="2017-05-29T19:07:10.705Z">
+<meta property="og:updated_time" content="2017-09-03T09:50:35.997Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Native入门到怀疑人生（四）">
-<meta name="twitter:description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章React Native入门到怀疑人生（三）我们已经讲解了RN的props属性，state状态，样式相关知识，那么本章节将讲解RN的flexbox布局，控件宽高相关知识。本章将使用ES6语法。文章不当之处，希望大家不吝赐教，多谢！">
+<meta name="twitter:description" content="欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章React Native入门到怀疑人生（三）我们已经讲解了RN的props属性，state状态，样式相关知识，那么本章节将讲解RN的flexbox布局，控件宽高相关知识。本章将使用ES6语法。文章不当之处，希望大家及时指出，多谢！">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/Mrxyx/MarkPhotos/master/Res/2017051501.png">
 
 
@@ -419,7 +419,7 @@
       
 
       
-        <p>欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章<a href="/2017/05/09/React-Native入门到怀疑人生（三）/" title="React Native入门到怀疑人生（三）">React Native入门到怀疑人生（三）</a>我们已经讲解了RN的props属性，state状态，样式相关知识，那么本章节将讲解RN的flexbox布局，控件宽高相关知识。本章将使用ES6语法。文章不当之处，希望大家不吝赐教，多谢！<br><a id="more"></a></p>
+        <p>欢迎收听React Native系列，基于Window10,偏向于Android端的React Native。上一章<a href="/2017/05/09/React-Native入门到怀疑人生（三）/" title="React Native入门到怀疑人生（三）">React Native入门到怀疑人生（三）</a>我们已经讲解了RN的props属性，state状态，样式相关知识，那么本章节将讲解RN的flexbox布局，控件宽高相关知识。本章将使用ES6语法。文章不当之处，希望大家及时指出，多谢！<br><a id="more"></a></p>
 <h2 id="宽高"><a href="#宽高" class="headerlink" title="宽高"></a>宽高</h2><p>组件的宽高，这里可以理解为Android中控件的宽高，宽和高决定了控件大小。Android中的宽高使用的单位为dp（独立像素密度）,而RN中的宽高无单位。表示了与设备像素密度无关的逻辑像素点。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**-----width height--------****/</span></div><div class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> &#123;AppRegistry, Text, View&#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">FixDimensionsBasics</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;View&gt;</div><div class="line">        &lt;View style=&#123;&#123;width: 50, height: 50, backgroundColor: 'powderblue'&#125;&#125;/&gt;</div><div class="line">        &lt;View style=&#123;&#123;width: 100, height: 100, backgroundColor: 'skyblue'&#125;&#125;/&gt;</div><div class="line">        &lt;View style=&#123;&#123;width: 150, height: 150, backgroundColor: 'steelblue'&#125;&#125;/&gt;</div><div class="line">      &lt;/View&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">AppRegistry.registerComponent('FirstRNProject', ()=&gt;FixDimensionsBasics);</div></pre></td></tr></table></figure>
 <p>运行结果如下图</p>
@@ -621,7 +621,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -632,7 +632,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -643,7 +643,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -2,6 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.mrxyx.cn/2017/11/22/ubuntu/</loc>
+    
+    <lastmod>2017-11-22T15:54:31.401Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.mrxyx.cn/2017/05/07/React-Native%E5%85%A5%E9%97%A8%E5%88%B0%E6%80%80%E7%96%91%E4%BA%BA%E7%94%9F%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
+    
+    <lastmod>2017-09-03T09:50:58.220Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.mrxyx.cn/2017/05/08/React-Native%E5%85%A5%E9%97%A8%E5%88%B0%E6%80%80%E7%96%91%E4%BA%BA%E7%94%9F%EF%BC%88%E4%BA%8C%EF%BC%89/</loc>
+    
+    <lastmod>2017-09-03T09:50:47.046Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.mrxyx.cn/2017/05/09/React-Native%E5%85%A5%E9%97%A8%E5%88%B0%E6%80%80%E7%96%91%E4%BA%BA%E7%94%9F%EF%BC%88%E4%B8%89%EF%BC%89/</loc>
+    
+    <lastmod>2017-09-03T09:50:41.954Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.mrxyx.cn/2017/05/12/React-Native%E5%85%A5%E9%97%A8%E5%88%B0%E6%80%80%E7%96%91%E4%BA%BA%E7%94%9F%EF%BC%88%E5%9B%9B%EF%BC%89/</loc>
+    
+    <lastmod>2017-09-03T09:50:35.997Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.mrxyx.cn/2017/05/22/React-Native%E5%85%A5%E9%97%A8%E5%88%B0%E6%80%80%E7%96%91%E4%BA%BA%E7%94%9F%EF%BC%88%E4%BA%94%EF%BC%89/</loc>
+    
+    <lastmod>2017-09-03T09:50:17.379Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.mrxyx.cn/2017/08/30/AspectJ-in-Android/</loc>
     
     <lastmod>2017-08-31T15:03:43.754Z</lastmod>
@@ -79,27 +121,6 @@
   </url>
   
   <url>
-    <loc>http://www.mrxyx.cn/2017/05/22/React-Native%E5%85%A5%E9%97%A8%E5%88%B0%E6%80%80%E7%96%91%E4%BA%BA%E7%94%9F%EF%BC%88%E4%BA%94%EF%BC%89/</loc>
-    
-    <lastmod>2017-05-29T19:07:26.796Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.mrxyx.cn/2017/05/12/React-Native%E5%85%A5%E9%97%A8%E5%88%B0%E6%80%80%E7%96%91%E4%BA%BA%E7%94%9F%EF%BC%88%E5%9B%9B%EF%BC%89/</loc>
-    
-    <lastmod>2017-05-29T19:07:10.705Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.mrxyx.cn/2017/05/09/React-Native%E5%85%A5%E9%97%A8%E5%88%B0%E6%80%80%E7%96%91%E4%BA%BA%E7%94%9F%EF%BC%88%E4%B8%89%EF%BC%89/</loc>
-    
-    <lastmod>2017-05-29T19:05:58.277Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.mrxyx.cn/2017/05/09/Android%E5%86%85%E5%AD%98%E4%BC%98%E5%8C%96/</loc>
     
     <lastmod>2017-05-29T18:44:57.084Z</lastmod>
@@ -117,20 +138,6 @@
     <loc>http://www.mrxyx.cn/tags/index.html</loc>
     
     <lastmod>2017-05-29T18:06:00.985Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.mrxyx.cn/2017/05/07/React-Native%E5%85%A5%E9%97%A8%E5%88%B0%E6%80%80%E7%96%91%E4%BA%BA%E7%94%9F%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
-    
-    <lastmod>2017-05-15T11:51:31.605Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.mrxyx.cn/2017/05/08/React-Native%E5%85%A5%E9%97%A8%E5%88%B0%E6%80%80%E7%96%91%E4%BA%BA%E7%94%9F%EF%BC%88%E4%BA%8C%EF%BC%89/</loc>
-    
-    <lastmod>2017-05-15T11:50:35.696Z</lastmod>
     
   </url>
   
