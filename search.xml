@@ -20,8 +20,8 @@
         <category>weex</category>
       </categories>
       <tags>
-        <tag>weex</tag>
         <tag>Android</tag>
+        <tag>weex</tag>
       </tags>
   </entry>
   <entry>
@@ -32,8 +32,8 @@
         <category>Ubuntu</category>
       </categories>
       <tags>
-        <tag>Android</tag>
         <tag>Ubuntu</tag>
+        <tag>Android</tag>
         <tag>编译</tag>
         <tag>源码</tag>
       </tags>
