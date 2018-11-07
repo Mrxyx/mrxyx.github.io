@@ -64,7 +64,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="android，框架," />
 
 
 
@@ -75,15 +75,17 @@
 
 
 
-<meta name="description" content="Mrx">
-<meta property="og:type" content="website">
-<meta property="og:title" content="知,行|Mrx">
-<meta property="og:url" content="http://www.mrxyx.cn/tags/反射/index.html">
+<meta name="description" content="🌧">
+<meta name="keywords" content="android，框架">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android业务代码框架模式的理解">
+<meta property="og:url" content="http://www.mrxyx.cn/2018/11/07/Android业务代码框架思考/index.html">
 <meta property="og:site_name" content="知,行|Mrx">
-<meta property="og:description" content="Mrx">
+<meta property="og:description" content="🌧">
+<meta property="og:updated_time" content="2018-11-07T16:16:17.831Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="知,行|Mrx">
-<meta name="twitter:description" content="Mrx">
+<meta name="twitter:title" content="Android业务代码框架模式的理解">
+<meta name="twitter:description" content="🌧">
 
 
 
@@ -113,13 +115,13 @@
 
 
 
-  <link rel="canonical" href="http://www.mrxyx.cn/tags/反射/"/>
+  <link rel="canonical" href="http://www.mrxyx.cn/2018/11/07/Android业务代码框架思考/"/>
 
 
 
 
 
-  <title>标签: 反射 | 知,行|Mrx</title>
+  <title>Android业务代码框架模式的理解 | 知,行|Mrx</title>
   
 
 
@@ -148,7 +150,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -275,54 +277,240 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>反射<small>标签</small>
-        </h2>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.mrxyx.cn/2018/11/07/Android业务代码框架思考/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mrx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="知,行|Mrx">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/06/05/Java反射学习实践/" itemprop="url">
-              
-                <span itemprop="name">Java反射学习实践</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">Android业务代码框架模式的理解</h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-05T20:11:11+08:00"
-              content="2017-06-05" >
-          06-05
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-07T22:47:42+08:00">
+                2018-11-07
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>🌧<br><a id="more"></a></p>
+<h3 id="mvc"><a href="#mvc" class="headerlink" title="mvc"></a>mvc</h3><p>传统的项目架构</p>
+<ul>
+<li>痛点：</li>
+</ul>
+<ol>
+<li>随业务需求的变更和迭代会导致单个activity或fragment类十分的臃肿</li>
+<li>有新需求或改动时，需要去通读之前的业务代码，改动时会改动整个类的代码需要十分谨慎，谨防改动带来的连锁问题，需要消耗较大的精力。<br>因此需要去考虑如何解耦，拆分activity、fragment，合理的设计安置代码，让代码框架面对业务变更时更加灵活。</li>
+</ol>
+<h3 id="mvp"><a href="#mvp" class="headerlink" title="mvp"></a>mvp</h3><p>mvp代码框架 解耦了activity(controller层)，将原本存在于activity中的界面、数据处理逻辑、业务处理逻辑拆分</p>
+<ul>
+<li>解决的痛点：</li>
+</ul>
+<ol>
+<li>引入presenter、model，有效的拆分出activity的代码，解耦view和model，数据的处理和界面的展示完全隔离，界面展示的改动或者数据处理逻辑改动不需要去修改整个类。</li>
+<li>对于变动较大的p和v 可以通过抽象相互依赖，符合依赖倒置，拥抱变化。</li>
+<li>业务代码被单独出来，代码结构会比较清晰.</li>
+</ol>
+<ul>
+<li>痛点：</li>
+</ul>
+<ol>
+<li>引入presenter，model能有效的拆分出activity的代码，解耦view和model，但是当业务逻辑足够复杂时，可以预见p层将会同样变得很臃肿。</li>
+</ol>
+<ul>
+<li>注意点：<br>viewInterface的设计将直接影响到p层的复杂度</li>
+</ul>
+<h4 id="mvp-延伸："><a href="#mvp-延伸：" class="headerlink" title="mvp 延伸："></a>mvp 延伸：</h4><p>p层会因业务逻辑复杂而变得臃肿 针对此又出现了<a href="https://github.com/googlesamples/android-architecture/tree/todo-mvp-clean/" target="_blank" rel="external">mvp-clean</a>，<a href="https://github.com/googlesamples/android-architecture/tree/todo-mvp-dagger/" target="_blank" rel="external">mvp-dragger</a>，<a href="https://github.com/googlesamples/android-architecture/tree/todo-mvp-rxjava/" target="_blank" rel="external">mvp-rxjava</a>框架来解耦p层</p>
+<h3 id="mvvm"><a href="#mvvm" class="headerlink" title="mvvm"></a>mvvm</h3><p>与mvp和mvc代码框架不同的是，mvvm的核心是处理数据<br>通过DataBinding或liveData将数据bean和界面控件双向绑定，在数据发生改变时，界面自动响应做出变化，用数据驱动界面</p>
+<ul>
+<li>解决的痛点：</li>
+</ul>
+<ol>
+<li>关注点转移：不需要再去关注何时刷新界面，只需关注数据的处理。</li>
+<li>只需要控制实体类bean的数据 就可以控制界面的展示，能拆分开view和业务逻辑的强相关 更加专注于业务代码逻辑处理</li>
+<li>解耦：view-model-业务逻辑层(p)，不存在强相关，同一个界面的view和viewmodel可以分配给多个人负责，两者同时进行开发没有影响</li>
+</ol>
+<h4 id="mvvm延伸："><a href="#mvvm延伸：" class="headerlink" title="mvvm延伸："></a>mvvm延伸：</h4><p>vue angluar前端框架为什么受到那么多人的支持和拥护？个人认为就是因为它们将数据和界面完全隔离开来，将开发的侧重点转向如何操作数据变化。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.jpg" alt="Mrx 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.jpg" alt="Mrx 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/android，框架/" rel="tag"># android，框架</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/10/Git私服搭建笔记/" rel="prev" title="Git私服搭建笔记--Gogs">
+                Git私服搭建笔记--Gogs <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -330,6 +518,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -350,8 +542,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -450,6 +651,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#mvc"><span class="nav-number">1.</span> <span class="nav-text">mvc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mvp"><span class="nav-number">2.</span> <span class="nav-text">mvp</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#mvp-延伸："><span class="nav-number">2.1.</span> <span class="nav-text">mvp 延伸：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mvvm"><span class="nav-number">3.</span> <span class="nav-text">mvvm</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#mvvm延伸："><span class="nav-number">3.1.</span> <span class="nav-text">mvvm延伸：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -610,6 +827,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
